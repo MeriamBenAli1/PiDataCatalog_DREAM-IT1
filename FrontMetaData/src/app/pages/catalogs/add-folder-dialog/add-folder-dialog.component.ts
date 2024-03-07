@@ -13,6 +13,8 @@ export class AddFolderDialogComponent implements OnInit{
   folderName: string = '';
   folderDescription: string = '';
  
+
+  
   constructor(
     private folderService: FolderServiceService,
     public dialogRef: MatDialogRef<AddFolderDialogComponent>
