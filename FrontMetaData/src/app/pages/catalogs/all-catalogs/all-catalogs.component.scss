@@ -1,0 +1,124 @@
+.folders-app {
+  .search-add-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    
+    .search-box {
+      display: flex;
+      background-color: #70afe6;
+      border-radius: 20px;
+      overflow: hidden;
+
+      .search-input {
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        width: 100%;
+        background-color: rgb(125, 188, 226);
+
+        &:focus {
+          border-color: inherit;
+        }
+      }
+
+      .search-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i.material-icons {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .add-folder {
+      background-color: #7bc7f3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      i.material-icons {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .folders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 1rem;
+
+    .folder-card {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      
+
+      .folder-header {
+        background-color: #ffffff;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        .folder-image {
+          max-height: 100px;
+          object-fit: cover;
+      
+        }
+      }
+
+      .folder-body {
+        padding: 15px;
+
+        .folder-name {
+          margin-top: 0;
+        }
+      }
+
+      .folder-actions {
+        margin-top: auto;
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+
+        .action-button {
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+
+          i.material-icons {
+            font-size: 24px;
+          }
+        }
+
+        .edit {
+          color: #2d80d8;
+        }
+
+        .delete {
+          color: #900917;
+        }
+
+        .open {
+          color: #2d7acd;
+        }
+      }
+    }
+  }
+}

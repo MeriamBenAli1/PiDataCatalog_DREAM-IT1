@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div class="vendor-sales-report">
+  <div class="header">
+    <i class="fa-solid fa-table-list"></i>
+    <h1>{{ tableName }}</h1>
+  </div>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="#overview" data-toggle="tab">Overview</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#hierarchy" data-toggle="tab">Hierarchy</a>
+    </li>
+    <!-- ... other tabs ... -->
+  </ul>
+  <div class="tab-content">
+    <div id="overview" class="tab-pane fade show active">
+      <div class="description-area">
+        <textarea *ngIf="!isDescriptionEditable" id="description" rows="4" class="form-control" readonly>{{ tableDescription }}</textarea>
+        <input *ngIf="isDescriptionEditable" type="text" [(ngModel)]="tableDescription" class="form-control" />
+        <button class="edit-btn" (click)="toggleEditDescription()">
+          <i class="fa-solid fa-pen"></i>
+        </button>
+        <button *ngIf="isDescriptionEditable" class="save-btn" (click)="saveDescription()">
+          Save
+        </button>
+      </div>
+      <div class="table-columns">
+        <div class="header-actions">
+          <h2>Table Columns (2)</h2>
+          <button class="add-metadata-btn" (click)="openDialog() " ><i class="fa fa-plus"></i>Add Metadata</button>
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let column of columns; let idx = index">
+                <td>{{column.name }}</td>
+                <td>{{column.type }}</td>
+                <td>{{column.description }}</td>
+              </tr>
+              <!-- ... more rows ... -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- ... other tab content ... -->
+  </div>
+</div>
