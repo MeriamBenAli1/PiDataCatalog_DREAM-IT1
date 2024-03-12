@@ -96,61 +96,56 @@ export const MENU: MenuItem[] = [
 
     {
         id: 5,
-        label: 'Gouvernance',
+        label: 'Gouvernanace',
         icon: 'ri-store-2-line',
         subItems: [
             {
                 id: 6,
-                label: 'Business Terms',
-                link: '/businessTerms',
+                label: 'Policy',
+                link: 'Ajouter-policy',
                 parentId: 5
             },
+           
             {
                 id: 7,
-                label: 'Categories',
-                link: '/categories',
+                label: 'GetPolicy',
+                link: 'List-policy',
                 parentId: 5
             },
             {
                 id: 8,
-                label: 'Classification',
-                link: '/classification',
+                label: 'Docummentation',
+                link: '/Ajouter-Documentation',
                 parentId: 5
             },
             {
                 id: 9,
-                label: 'Data Classes',
-                link: '/dataClasses',
+                label: 'GetDoc',
+                link: '/List-Documentation',
                 parentId: 5
             },
             {
                 id: 10,
-                label: 'Data Discovery',
-                link: '/dataDiscovery',
+                label: 'policyUser',
+                link: '/List-policyUser',
                 parentId: 5
             },
             {
                 id: 11,
-                label: 'Data Quality',
-                link: '/dataQuality',
+                label: 'Extraction',
+                link: '/Extraction',
                 parentId: 5
             },
             {
-                id: 12,
-                label: 'Policies',
-                link: '/policies',
+                id: 1,
+                label: 'Statpolicies',
+                link: '/Statpolicies',
                 parentId: 5
             },
             {
-                id: 13,
-                label: 'References Data',
-                link: '/referencesData',
-                parentId: 5
-            },
-            {
-                id: 13,
-                label: 'Rules',
-                link: '/rules',
+                id: 1,
+                label: 'chatboot',
+                link: '/chatboot',
                 parentId: 5
             },
         ]

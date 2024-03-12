@@ -1,13 +1,14 @@
-package tn.esprit.datacatalog.Service;
+package tn.esprit.spring.service;
 
-import tn.esprit.datacatalog.Entities.Policy;
+
 
 import java.io.ByteArrayInputStream;
 import java.util.List;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
-import tn.esprit.datacatalog.Entities.Policy;
+
 import org.springframework.stereotype.Service;
+import tn.esprit.spring.enities.Policy;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

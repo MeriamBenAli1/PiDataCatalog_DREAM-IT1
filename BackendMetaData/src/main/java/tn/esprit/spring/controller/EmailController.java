@@ -1,11 +1,12 @@
-package tn.esprit.datacatalog.Controller;
+package tn.esprit.spring.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import tn.esprit.datacatalog.Entities.EmailDetails;
-import tn.esprit.datacatalog.Service.MailService;
+
 
 import org.springframework.http.ResponseEntity;
+import tn.esprit.spring.enities.EmailDetails;
+import tn.esprit.spring.service.MailService;
 
 @CrossOrigin(origins = "http://localhost:4200") // Utilisez "*" pour permettre à toutes les origines ou spécifiez une origine précise
 @RestController

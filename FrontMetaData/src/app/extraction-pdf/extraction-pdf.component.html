@@ -1,0 +1,11 @@
+<div class="file-upload-wrapper">
+  <input type="file" id="pdfFile" (change)="onFileSelected($event)" hidden>
+  <label for="pdfFile" class="file-upload-icon">
+      <i class="fas fa-file-pdf"></i> <!-- Assurez-vous d'avoir FontAwesome pour utiliser cette icône -->
+  </label>
+  <button class="upload-btn" (click)="uploadFile()">Upload PDF</button>
+</div>
+
+<div *ngIf="uploadResponse" class="upload-response">
+  <p>Response: {{ uploadResponse | json }}</p>
+</div>

@@ -1,8 +1,9 @@
-package tn.esprit.datacatalog.Service;
+package tn.esprit.spring.service;
 
-import tn.esprit.datacatalog.Entities.PdfExtractedData;
-import tn.esprit.datacatalog.Entities.Policy;
 
+
+
+import tn.esprit.spring.enities.Policy;
 
 import java.io.IOException;
 import java.util.List;

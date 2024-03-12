@@ -1,11 +1,11 @@
-package tn.esprit.datacatalog.Service;
+package tn.esprit.spring.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tn.esprit.datacatalog.Entities.Documentation;
-import tn.esprit.datacatalog.Entities.Policy;
-import tn.esprit.datacatalog.Repository.IDocumentationRepo;
+import tn.esprit.spring.enities.Documentation;
+import tn.esprit.spring.repositories.IDocumentationRepo;
+
 
 import java.util.List;
 @Service

@@ -6,7 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root'
 })
 export class LanguageService {
-  public languages: string[] = ['en', 'es', 'de', 'it', 'ru'];
+  public languages: string[] = ['en', 'es', 'de', 'it', 'ru', 'fr'];
 
   constructor(public translate: TranslateService, private cookieService: CookieService) {
     let browserLang;

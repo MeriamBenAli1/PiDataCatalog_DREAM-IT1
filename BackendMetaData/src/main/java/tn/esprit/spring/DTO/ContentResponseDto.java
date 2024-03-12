@@ -1,4 +1,4 @@
-package tn.esprit.datacatalog.DTO;
+package tn.esprit.spring.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

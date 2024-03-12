@@ -1,0 +1,14 @@
+<!-- Affichage des documents avec un bouton "Modifier" pour chaque document -->
+<div *ngFor="let document of documents">
+    <p>{{ document.nom }}</p>
+    <p>{{ document.description }}</p>
+    <button (click)="editDocument(document)">Modifier</button>
+  </div>
+  
+  <!-- Formulaire de modification -->
+  <form *ngIf="editing" [formGroup]="documentationForm" (ngSubmit)="saveChanges()">
+    <input type="text" formControlName="nom" placeholder="Nom du document">
+    <input type="text" formControlName="description" placeholder="Description du document">
+    <button type="submit">Enregistrer</button>
+  </form>
+  

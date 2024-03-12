@@ -1,4 +1,4 @@
-package tn.esprit.datacatalog.Controller;
+package tn.esprit.spring.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -7,11 +7,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import tn.esprit.datacatalog.DTO.ContentResponseDto;
-import tn.esprit.datacatalog.Entities.Policy;
-import tn.esprit.datacatalog.Service.ContentExtractorControl;
-import tn.esprit.datacatalog.Service.IPolicyService;
-import tn.esprit.datacatalog.Service.PolicyServiceImpl;
+import tn.esprit.spring.DTO.ContentResponseDto;
+import tn.esprit.spring.service.ContentExtractorControl;
+import tn.esprit.spring.service.IPolicyService;
+
 
 import java.io.InputStream;
 @RestController

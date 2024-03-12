@@ -1,27 +1,29 @@
-package tn.esprit.datacatalog.Controller;
+package tn.esprit.spring.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*; // Importation optimisée
 import org.springframework.web.multipart.MultipartFile;
-import tn.esprit.datacatalog.Entities.Policy;
-import tn.esprit.datacatalog.Service.ExportPDFService;
-import tn.esprit.datacatalog.Service.IDocService;
-import tn.esprit.datacatalog.Service.IPolicyService;
-import tn.esprit.datacatalog.Service.MailService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-import tn.esprit.datacatalog.Service.IPolicyService;
+
 
 import java.io.ByteArrayInputStream;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import tn.esprit.spring.enities.Policy;
+import tn.esprit.spring.service.ExportPDFService;
+import tn.esprit.spring.service.IDocService;
+import tn.esprit.spring.service.IPolicyService;
+import tn.esprit.spring.service.MailService;
+
 import java.io.ByteArrayOutputStream;
 import java.util.List;
 

@@ -1,0 +1,55 @@
+<div class="filters">
+  <h5>Search</h5>
+  <div class="input-group mb-3">
+    <input (keyup)="applyFilter($event)" type="text" class="form-control" placeholder="Search Keywords" aria-label="Search Keywords" aria-describedby="search-button">
+    <button class="btn btn-outline-secondary" type="button" id="search-button">Search</button>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="table-responsive">
+    <table class="table custom-table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nom</th>
+          <th>Règles</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let policy of listpolicy" class="table-row">
+          <ng-container *ngIf="!policy.editing">
+            <td>{{ policy.nom }}</td>
+            <td>{{ policy.rules }}</td>
+            <td>
+              <button class="btn icon-btn" >
+                <i class="fas fa-plus-circle add-icon"></i>
+              </button>
+              <button class="btn icon-btn" (click)="deletePolicy(policy.idPolicy)">
+                <i class="fas fa-trash-alt delete-icon"></i>
+              </button>
+              <button class="btn icon-btn" (click)="editPolicy(policy)">
+                <i class="fas fa-edit edit-icon"></i>
+              </button>
+            </td>
+          </ng-container>
+          <ng-container *ngIf="policy.editing">
+            <td><input type="text" class="form-control" [(ngModel)]="policy.nom" /></td>
+            <td><input type="text" class="form-control" [(ngModel)]="policy.rules" /></td>
+            <td class="text-center">
+              <button (click)="saveChanges(policy)" class="btn btn-success btn-sm">
+                <i class="fas fa-save"></i> Save
+              </button>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pdf-download-icon" (click)="downloadPdf()">
+    <i class="fas fa-file-pdf"></i>
+  </div>
+   
+  <button class="btn btn-primary" routerLink="/Statpolicies">Statistiques sur les politiques</button>
+</div>

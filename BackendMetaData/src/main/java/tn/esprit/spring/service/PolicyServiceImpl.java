@@ -1,4 +1,4 @@
-package tn.esprit.datacatalog.Service;
+package tn.esprit.spring.service;
 
 import lombok.AllArgsConstructor;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -10,9 +10,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import tn.esprit.datacatalog.Entities.PdfExtractedData;
-import tn.esprit.datacatalog.Entities.Policy;
-import tn.esprit.datacatalog.Repository.IPolicyRepo;
+import tn.esprit.spring.enities.Policy;
+import tn.esprit.spring.repositories.IPolicyRepo;
 
 
 import java.io.File;

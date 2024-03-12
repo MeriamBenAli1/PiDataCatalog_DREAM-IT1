@@ -1,0 +1,8 @@
+<!-- email-sender.component.html -->
+<form #emailForm="ngForm" (ngSubmit)="sendEmail(emailForm)">
+    <input type="email" ngModel name="to" placeholder="Destinataire" required>
+    <input type="text" ngModel name="subject" placeholder="Sujet" required>
+    <textarea ngModel name="content" placeholder="Contenu" required></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+  

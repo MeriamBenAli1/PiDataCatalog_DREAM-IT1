@@ -11,11 +11,11 @@ import { environment } from '../environments/environment';
 
 import { LayoutsModule } from './layouts/layouts.module';
 import { PagesModule } from './pages/pages.module';
-
+import { StatPolicyComponent } from './stat-policy/stat-policy.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { initFirebaseBackend } from './authUtils';
-
+import { KeyValuePipe } from '@angular/common';
 import { ErrorInterceptor } from './core/helpers/error.interceptor';
 import { JwtInterceptor } from './core/helpers/jwt.interceptor';
 import { FakeBackendInterceptor } from './core/helpers/fake-backend';
@@ -33,7 +33,8 @@ export function createTranslateLoader(http: HttpClient): any {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StatPolicyComponent
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,11 @@
-package tn.esprit.datacatalog.Controller;
+package tn.esprit.spring.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import tn.esprit.datacatalog.Entities.Documentation;
-import tn.esprit.datacatalog.Service.IDocService;
+import tn.esprit.spring.enities.Documentation;
+import tn.esprit.spring.service.IDocService;
+
 
 import java.util.List;
 

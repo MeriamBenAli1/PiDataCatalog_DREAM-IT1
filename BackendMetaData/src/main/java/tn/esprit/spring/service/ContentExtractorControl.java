@@ -1,4 +1,4 @@
-package tn.esprit.datacatalog.Service;
+package tn.esprit.spring.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -6,8 +6,8 @@ import org.apache.pdfbox.text.PDFTextStripper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import tn.esprit.datacatalog.Entities.Policy;
-import tn.esprit.datacatalog.Service.IPolicyService;
+import tn.esprit.spring.enities.Policy;
+
 
 @Service
 @Slf4j

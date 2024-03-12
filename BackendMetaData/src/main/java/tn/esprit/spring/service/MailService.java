@@ -1,4 +1,4 @@
-package tn.esprit.datacatalog.Service;
+package tn.esprit.spring.service;
 
 public interface MailService {
 
