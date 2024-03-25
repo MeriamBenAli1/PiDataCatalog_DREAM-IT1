@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms'; // Assurez-vous d'importer ReactiveFormsModule ici
 import { CommonModule } from '@angular/common'; // Importez CommonModule
-import { Policy } from '../core/models/policy';
+import { Policy } from '../core/models/Policy';
 import { PolicyService } from '../core/services/policy.service';
 import { Router } from '@angular/router'; // Importer Router
 import { EmailService } from '../core/services/email.service';

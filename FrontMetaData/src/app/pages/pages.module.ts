@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
 
-import { HttpClient } from '@angular/common/http';
 import { ListPolicyComponent } from '../list-policy/list-policy.component';
 import { AjouterPolicyComponent } from '../ajouter-policy/ajouter-policy.component';
 import { ModifierPolicyComponent } from '../modifier-policy/modifier-policy.component';
@@ -31,6 +30,10 @@ import { DataModule } from './data/data.module';
 import { ProjectsModule } from './projects/projects.module';
 import { CatalogsModule } from './catalogs/catalogs.module';
 import { AdministrationModule } from './administration/administration.module';
+
+
+
+
 
 @NgModule({
   declarations: [ DashboardComponent],
@@ -61,10 +64,13 @@ import { AdministrationModule } from './administration/administration.module';
     ListDocumentationComponent,
     ModifierDocumentationComponent,
     FormsModule,
+
+    
+
     
     //ExportPDFPolicyComponent
    
-
+    
   ],
   providers: [
   ]

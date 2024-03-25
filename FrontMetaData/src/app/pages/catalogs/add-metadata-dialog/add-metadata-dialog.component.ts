@@ -51,4 +51,3 @@ export class AddMetadataDialogComponent {
       columnName: ['', Validators.required]
     });
   }
-

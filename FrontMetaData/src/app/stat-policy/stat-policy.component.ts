@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef, Inject , PLATFORM_ID } from '@angular/core';
-import { KeyValuePipe } from '@angular/common';
+
 import { isPlatformBrowser } from '@angular/common';
 import Chart from 'chart.js/auto';
 import { PolicyService } from '../core/services/policy.service'; // Importez le service PolicyService
 import { HttpErrorResponse } from '@angular/common/http';
+import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-stat-policy',
@@ -51,35 +52,18 @@ export class StatPolicyComponent implements OnInit {
                             label: 'Statistique Politiques Par ',
                             data: chartData,
                             backgroundColor: [
-                                'rgba(255, 99, 132, 0.6)', // Rouge
-                                'rgba(54, 162, 235, 0.6)', // Bleu
-                                'rgba(255, 206, 86, 0.6)', // Jaune
-                                'rgba(75, 192, 192, 0.6)', // Vert
-                                'rgba(153, 102, 255, 0.6)', // Violet
-                                'rgba(255, 159, 64, 0.6)', // Orange
-                                'rgba(199, 199, 199, 0.6)', // Gris
-                                'rgba(128, 0, 128, 0.6)', // Pourpre
-                                'rgba(0, 128, 0, 0.6)', // Vert foncé
-                                'rgba(0, 255, 255, 0.6)', // Cyan
-                                'rgba(255, 0, 255, 0.6)', // Magenta
-                                'rgba(128, 128, 0, 0.6)', // Olive
-                                'rgba(0, 0, 128, 0.6)' // Bleu marine
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)', // Rouge
-                                'rgba(54, 162, 235, 1)', // Bleu
-                                'rgba(255, 206, 86, 1)', // Jaune
-                                'rgba(75, 192, 192, 1)', // Vert
-                                'rgba(153, 102, 255, 1)', // Violet
-                                'rgba(255, 159, 64, 1)', // Orange
-                                'rgba(199, 199, 199, 1)', // Gris
-                                'rgba(128, 0, 128, 1)', // Pourpre
-                                'rgba(0, 128, 0, 1)', // Vert foncé
-                                'rgba(0, 255, 255, 1)', // Cyan
-                                'rgba(255, 0, 255, 1)', // Magenta
-                                'rgba(128, 128, 0, 1)', // Olive
-                                'rgba(0, 0, 128, 1)' // Bleu marine
-                            ]
+                              '#34495e', // Couleur foncée pour le premier secteur
+                              '#2ecc71', // Couleur foncée pour le deuxième secteur
+                              '#3498db', // Couleur foncée pour le troisième secteur
+                              // Ajoutez autant de couleurs foncées que nécessaire
+                          ],
+                          borderColor: [
+                              // Vous pouvez laisser les bordures avec les mêmes couleurs ou les modifier selon vos préférences
+                              '#34495e',
+                              '#2ecc71',
+                              '#3498db',
+                              // Ajoutez les bordures correspondantes
+                          ]
 
                         }]
                     },
@@ -102,25 +86,24 @@ export class StatPolicyComponent implements OnInit {
     }
 }
 
-
+////pdf////
+  generatePDF() {
+    const canvasElement = this.verticalChart.nativeElement;
+  
+    if (canvasElement) {
+      const imgData = canvasElement.toDataURL('image/png');
+      const pdf = new jsPDF();
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save("statistiques-politiques.pdf");
+    } else {
+      console.error('Le canvas du graphique est introuvable.');
+    }
   
   
-  
+  }
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

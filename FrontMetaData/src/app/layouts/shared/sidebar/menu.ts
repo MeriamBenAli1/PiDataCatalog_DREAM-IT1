@@ -148,6 +148,37 @@ export const MENU: MenuItem[] = [
                 link: '/chatboot',
                 parentId: 5
             },
+            
+{
+                id: 6,
+                label: 'StatInterface',
+                link: '/StatInterface',
+                parentId: 5
+            },
+{
+                id: 10,
+                label: 'DataStat',
+                link: '/StatMetaData',
+                parentId: 5
+            },
+{
+                id: 11,
+                label: 'MetaData',
+                link: '/referencesData',
+                parentId: 5
+            },
+            {
+                id: 12,
+                label: 'Policies',
+                link: '/policies',
+                parentId: 5
+            },
+            {
+                id: 13,
+                label: 'StatRima',
+                link: '/Stat',
+                parentId: 5
+            },
         ]
     },
 

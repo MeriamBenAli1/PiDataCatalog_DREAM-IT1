@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule, NgModel, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Policy } from '../core/models/policy';
+import { Policy } from '../core/models/Policy';
 import { PolicyService } from '../core/services/policy.service';
 import { Router } from '@angular/router';
 

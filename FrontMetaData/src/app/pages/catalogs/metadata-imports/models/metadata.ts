@@ -3,5 +3,6 @@ export interface Column {
     name: string;
     type: string;
     description: string;
-    tags?: string[]; 
+    tags?: string[];
+    isDynamicallyAdded : boolean; 
   }

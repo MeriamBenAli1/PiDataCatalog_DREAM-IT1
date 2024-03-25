@@ -15,6 +15,8 @@ import { ExtractionPDFComponent } from '../extraction-pdf/extraction-pdf.compone
 import { StatPolicyComponent } from '../stat-policy/stat-policy.component';
 import { ListPolicyUserComponent } from '../list-policy-user/list-policy-user.component';
 import { ChaatBootComponent } from '../chaat-boot/chaat-boot.component';
+import { StatInterfaceComponent } from '../stat-interface/stat-interface.component';
+import { StatMetadataComponent } from '../stat-metadata/stat-metadata.component';
 
 
 
@@ -35,6 +37,15 @@ const routes: Routes = [
     { path: 'chatboot', component: ChaatBootComponent },
     { path: 'Extraction', component: ExtractionPDFComponent },
     
+    { path: 'StatInterface', component: StatInterfaceComponent },
+  
+    { path: 'Statpolicies', component: StatPolicyComponent },
+    { path: 'StatMetaData', component: StatMetadataComponent },
+
+
+    { path: 'StatInterface', component: StatInterfaceComponent },
+    { path: 'Statpolicies', component: StatPolicyComponent },
+    { path: 'StatMetaData', component: StatMetadataComponent },
     { path:'data',loadChildren:()=>import('./data/data.module').then(m=>m.DataModule)},
     { path:'projects',loadChildren:()=>import('./projects/projects.module').then(m=>m.ProjectsModule)},
     { path:'catalogs',loadChildren:()=>import('./catalogs/catalogs.module').then(m=>m.CatalogsModule)},

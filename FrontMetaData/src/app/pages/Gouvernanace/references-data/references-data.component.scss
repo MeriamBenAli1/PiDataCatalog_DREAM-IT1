@@ -1,0 +1,57 @@
+.container {
+    margin-top: 5rem; /* Espacement du haut */
+  }
+  
+  .filters {
+    margin-bottom: 2rem; /* Espacement en bas */
+  }
+  
+  .filters h5 {
+    font-size: 1.2rem; /* Taille de la police */
+    margin-bottom: 1rem; /* Espacement en bas */
+  }
+  
+  .form-group {
+    margin-bottom: 1rem; /* Espacement entre les éléments du formulaire */
+  }
+  
+  .table-responsive {
+    overflow-x: auto; /* Activation de la barre de défilement horizontale si nécessaire */
+  }
+  
+  .table {
+    width: 100%; /* Table s'étendant sur toute la largeur */
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    padding: 0.75rem; /* Espacement interne des cellules */
+  }
+  
+  .thead-dark {
+    background-color: #343a40; /* Couleur de fond de l'en-tête de tableau */
+    color: #fff; /* Couleur du texte de l'en-tête de tableau */
+  }
+  
+  .table-row {
+    transition: background-color 0.3s; /* Animation de transition au survol */
+  }
+  
+  .table-row:hover {
+    background-color: #f8f9fa; /* Couleur de fond au survol */
+  }
+  
+  .btn-primary {
+    background-color: #007bff; /* Couleur de fond du bouton primaire */
+    border-color: #007bff; /* Couleur de la bordure du bouton primaire */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Couleur de fond au survol du bouton primaire */
+    border-color: #0056b3; /* Couleur de la bordure au survol du bouton primaire */
+  }
+  
+  .btn-success {
+    margin-top: 1rem; /* Espacement du haut du bouton de succès */
+  }
+  

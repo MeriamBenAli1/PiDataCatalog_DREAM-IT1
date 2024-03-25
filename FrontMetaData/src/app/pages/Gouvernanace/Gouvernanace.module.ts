@@ -26,6 +26,27 @@ import { ListDocumentationComponent } from 'src/app/list-documentation/list-docu
 import { ModifierDocumentationComponent } from 'src/app/modifier-documentation/modifier-documentation.component';
 import { EmailSenderComponent } from 'src/app/email-sender/email-sender.component';
 import { ExportPDFPolicyComponent } from 'src/app/export-pdfpolicy/export-pdfpolicy.component';
+
+
+
+
+
+
+
+
+import { ChartModule } from 'angular-highcharts';
+
+import { BusinessTermsComponent } from './business-terms/business-terms.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { ClassificationComponent } from './classification/classification.component';
+import { DataClassesComponent } from './data-classes/data-classes.component';
+import { DataDiscoveryComponent } from './data-discovery/data-discovery.component';
+import { DataQualityComponent } from './data-quality/data-quality.component';
+import { PoliciesComponent } from './policies/policies.component';
+import { ReferencesDataComponent } from './references-data/references-data.component';
+import { ChartComponent } from './rules/rules.component';
+import { AjouterStatComponent } from './ajouter-stat/ajouter-stat.component';
+import { StatPolicyComponent } from 'src/app/stat-policy/stat-policy.component';
 @NgModule({
   // tslint:disable-next-line: max-line-length
     declarations: [],
@@ -56,7 +77,21 @@ import { ExportPDFPolicyComponent } from 'src/app/export-pdfpolicy/export-pdfpol
    ListDocumentationComponent,
    ModifierDocumentationComponent,
    ExportPDFPolicyComponent,
-   KeyValuePipe
+   KeyValuePipe,
+   AjouterStatComponent,
+   StatPolicyComponent,
+  
+   BusinessTermsComponent,
+   ChartModule,
+   CategoriesComponent,
+   ClassificationComponent,
+   DataClassesComponent,
+   DataDiscoveryComponent,
+   DataQualityComponent,
+   PoliciesComponent,
+   ReferencesDataComponent,
+   ChartComponent
+
     
     //hmddd
     

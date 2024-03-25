@@ -1,0 +1,45 @@
+.container {
+    margin-top: 5rem; /* Espacement du haut */
+    text-align: center; /* Alignement centré du contenu */
+  }
+  
+  h2 {
+    font-size: 1.8rem; /* Taille de la police du titre */
+    margin-bottom: 2rem; /* Espacement en bas */
+  }
+  
+  ul {
+    list-style-type: none; /* Suppression des puces */
+    padding: 0; /* Suppression des marges internes */
+  }
+  
+  li {
+    margin-bottom: 1rem; /* Espacement entre les éléments de la liste */
+    font-size: 1.2rem; /* Taille de la police des éléments de la liste */
+  }
+  
+  button {
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    border: none; /* Suppression de la bordure */
+    padding: 1rem 2rem; /* Espacement interne du bouton */
+    font-size: 1.2rem; /* Taille de la police du bouton */
+    cursor: pointer; /* Curseur de souris */
+    transition: background-color 0.3s ease; /* Animation de transition */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+  }
+  
+  canvas {
+    display: block;
+    margin-top: 3rem;
+    width: 60%; /* Réduire la largeur */
+    max-width: 400px; /* Largeur maximale réduite */
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  

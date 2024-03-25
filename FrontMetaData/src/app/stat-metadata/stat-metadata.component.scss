@@ -1,0 +1,31 @@
+:host {
+    display: block;
+    margin-top: 5rem; /* Espacement du haut */
+    text-align: center; /* Alignement centré du contenu */
+  }
+  
+  .container {
+    max-width: 600px; /* Définir une largeur maximale pour le conteneur */
+    margin: 0 auto; /* Centrer le conteneur horizontalement */
+  }
+  
+  canvas {
+    display: block;
+    margin: 0 auto; /* Centrer le canvas horizontalement */
+    width: 80%; /* Ajuster la largeur */
+    max-width: 400px; /* Définir une largeur maximale pour le canvas */
+    height: auto;
+    margin-top: 3rem;
+  }
+  
+  /* Modifier les couleurs des secteurs */
+  .chartjs-render-monitor .chartjs-render-monitor-pie-slice {
+    background-color: #34495e; /* Couleur foncée pour les secteurs */
+  }
+  
+  /* Modifier les dimensions de la légende */
+  .chartjs-render-monitor .chartjs-render-monitor-legend {
+    font-size: 14px; /* Taille de police de la légende */
+    margin-top: 1rem; /* Espace au-dessus de la légende */
+  }
+  
