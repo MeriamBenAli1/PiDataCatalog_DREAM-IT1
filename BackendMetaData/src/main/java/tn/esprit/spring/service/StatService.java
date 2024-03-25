@@ -1,9 +1,10 @@
-package tn.esprit.stat.Service;
+package tn.esprit.spring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tn.esprit.stat.Entities.Stat;
-import tn.esprit.stat.Reopsitory.StatRepository;
+import tn.esprit.spring.enities.Stat;
+import tn.esprit.spring.repositories.StatRepository;
+
 @Service
 public class StatService implements IStatServiceImp{
     @Autowired

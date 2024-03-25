@@ -19,6 +19,9 @@ public interface IPolicyService {
     public Policy getPolicyById(long id) ;
    List<Policy> savePolicyWithContent(String content) throws Exception;
 
+
+
+
     public Map<String, Float> calculatePolicyStatistics();
     }
 

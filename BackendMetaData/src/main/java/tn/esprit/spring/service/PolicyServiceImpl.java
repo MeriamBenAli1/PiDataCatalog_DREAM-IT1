@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import tn.esprit.spring.enities.Policy;
-import tn.esprit.spring.repositories.IPolicyRepo;
+import tn.esprit.spring.repositories.IpolicyRepo;
 
 
 import java.io.File;
@@ -22,7 +22,7 @@ import java.util.*;
 @AllArgsConstructor
 public class PolicyServiceImpl implements IPolicyService {
     @Autowired
-    IPolicyRepo policyRepo;
+    IpolicyRepo policyRepo;
 
     @Override
     public List<Policy> retrieveAllPolicy() {
