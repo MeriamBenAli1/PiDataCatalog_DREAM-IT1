@@ -43,9 +43,8 @@ const routes: Routes = [
     { path: 'StatMetaData', component: StatMetadataComponent },
 
 
-    { path: 'StatInterface', component: StatInterfaceComponent },
-    { path: 'Statpolicies', component: StatPolicyComponent },
-    { path: 'StatMetaData', component: StatMetadataComponent },
+  
+    
     { path:'data',loadChildren:()=>import('./data/data.module').then(m=>m.DataModule)},
     { path:'projects',loadChildren:()=>import('./projects/projects.module').then(m=>m.ProjectsModule)},
     { path:'catalogs',loadChildren:()=>import('./catalogs/catalogs.module').then(m=>m.CatalogsModule)},

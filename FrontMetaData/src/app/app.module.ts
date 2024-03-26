@@ -11,7 +11,6 @@ import { environment } from '../environments/environment';
 
 import { LayoutsModule } from './layouts/layouts.module';
 import { PagesModule } from './pages/pages.module';
-import { StatPolicyComponent } from './stat-policy/stat-policy.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { initFirebaseBackend } from './authUtils';
@@ -34,7 +33,7 @@ export function createTranslateLoader(http: HttpClient): any {
 @NgModule({
   declarations: [
     AppComponent,
-    StatPolicyComponent
+   
   ],
   imports: [
     BrowserModule,

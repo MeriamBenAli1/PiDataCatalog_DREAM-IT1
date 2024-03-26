@@ -89,10 +89,7 @@ const routes: Routes = [
       path: 'StatInterface',
       component: StatInterfaceComponent
   },
-  {
-      path: 'Statpolicies',
-      component: StatPolicyComponent
-  },
+ 
   {
       path: 'StatMetaData',
       component: StatMetadataComponent

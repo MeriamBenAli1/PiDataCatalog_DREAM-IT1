@@ -11,7 +11,7 @@ export class StatInterfaceComponent {
   constructor(private router: Router) { }
 
   redirectToPolicies(): void {
-    this.router.navigate(['/policies']);
+    this.router.navigate(['/Statpolicies']);
   }
   redirectToMetaData(): void {
     this.router.navigate(['/referencesData']);

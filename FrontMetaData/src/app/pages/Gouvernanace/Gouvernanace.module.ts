@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {  NgForm, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // tslint:disable-next-line: max-line-length
 import { NgbAccordionModule, NgbNavModule, NgbTypeaheadModule, NgbPaginationModule, NgbCollapseModule, NgbTooltipModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
@@ -17,7 +17,6 @@ import { KeyValuePipe } from '@angular/common';
 import { GouvernanaceRoutingModule } from './Gouvernanace-routing.module';
 
 import { ListPolicyComponent } from 'src/app/list-policy/list-policy.component';
-import { HttpClient } from '@angular/common/http';
 import { AjouterPolicyComponent } from 'src/app/ajouter-policy/ajouter-policy.component';
 import { ModifierPolicyComponent } from 'src/app/modifier-policy/modifier-policy.component';
 import { RouterModule } from '@angular/router';
@@ -49,7 +48,19 @@ import { AjouterStatComponent } from './ajouter-stat/ajouter-stat.component';
 import { StatPolicyComponent } from 'src/app/stat-policy/stat-policy.component';
 @NgModule({
   // tslint:disable-next-line: max-line-length
-    declarations: [],
+    declarations: [
+      AjouterStatComponent,
+   StatPolicyComponent,
+   BusinessTermsComponent,
+   CategoriesComponent,
+   ClassificationComponent,
+   DataClassesComponent,
+   DataDiscoveryComponent,
+   DataQualityComponent,
+   PoliciesComponent,
+   ReferencesDataComponent,
+   ChartComponent
+    ],
   
   imports: [
     GouvernanaceRoutingModule,
@@ -70,6 +81,7 @@ import { StatPolicyComponent } from 'src/app/stat-policy/stat-policy.component';
     NgSelectModule,
     NgxSliderModule,
     NgbModalModule,
+  
    ListPolicyComponent,
    ModifierPolicyComponent,
    RouterModule,
@@ -78,19 +90,12 @@ import { StatPolicyComponent } from 'src/app/stat-policy/stat-policy.component';
    ModifierDocumentationComponent,
    ExportPDFPolicyComponent,
    KeyValuePipe,
-   AjouterStatComponent,
-   StatPolicyComponent,
-  
-   BusinessTermsComponent,
+   
+   EmailSenderComponent,
+ 
    ChartModule,
-   CategoriesComponent,
-   ClassificationComponent,
-   DataClassesComponent,
-   DataDiscoveryComponent,
-   DataQualityComponent,
-   PoliciesComponent,
-   ReferencesDataComponent,
-   ChartComponent
+  
+ 
 
     
     //hmddd
