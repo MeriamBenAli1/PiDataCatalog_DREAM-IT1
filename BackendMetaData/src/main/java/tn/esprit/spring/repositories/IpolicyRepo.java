@@ -7,3 +7,4 @@ import tn.esprit.spring.enities.Policy;
 @Repository
 public interface IpolicyRepo extends JpaRepository<Policy, Long> {
 }
+
