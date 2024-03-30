@@ -1,0 +1,43 @@
+<div class="container mt-5">
+  <div class="table-responsive">
+    <table class="table custom-table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nom</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let doc of listDocumentation">
+          <tr class="table-row">
+            <ng-container *ngIf="!doc.editing; else editMode">
+              <td>{{ doc.nom }}</td>
+              <td>{{ doc.description }}</td>
+              <td>
+                <button class="btn icon-btn" (click)="deleteDocument(doc.idDoc)">
+                  <i class="fas fa-trash-alt delete-icon"></i> 
+                </button>
+                <button class="btn icon-btn" (click)="editDocument(doc)">
+                  <i class="fas fa-edit edit-icon"></i> 
+                </button>
+              </td>
+            </ng-container>
+            <ng-template #editMode>
+              <td><input type="text" class="form-control" [(ngModel)]="doc.nom" /></td>
+              <td><input type="text" class="form-control" [(ngModel)]="doc.description" /></td>
+              <td class="text-center">
+                <button (click)="saveChanges(doc)" class="btn btn-success btn-sm">
+                  <i class="fas fa-save"></i> Enregistrer
+                </button>
+                <button (click)="cancelEdit(doc)" class="btn btn-secondary btn-sm ml-2">
+                  <i class="fas fa-times"></i> Annuler
+                </button>
+              </td>
+            </ng-template>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

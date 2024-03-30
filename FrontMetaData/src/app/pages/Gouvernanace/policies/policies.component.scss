@@ -1,0 +1,16 @@
+.card-header {
+    font-weight: bold;
+  }
+  
+  .card {
+    transition: transform 0.2s; /* Animation */
+  }
+  
+  .card:hover {
+    transform: scale(1.03); /* Effet de zoom léger au survol */
+  }
+  
+  .container {
+    max-width: 960px; /* Ajustez selon vos préférences */
+  }
+  

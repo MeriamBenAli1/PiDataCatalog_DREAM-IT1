@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header text-center">
+          <h2>Modifier la politique</h2>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="policyForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="nom" class="form-label">Nom</label>
+              <input type="text" id="nom" formControlName="nom" class="form-control" placeholder="Entrez le nom de la politique">
+            </div>
+            <div class="mb-3">
+              <label for="rules" class="form-label">Règles</label>
+              <input type="text" id="rules" formControlName="rules" class="form-control" placeholder="Décrivez les règles">
+            </div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary" [disabled]="!policyForm.valid">Mettre à jour la politique</button>
+              <button type="button" class="btn btn-secondary" >Annuler</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

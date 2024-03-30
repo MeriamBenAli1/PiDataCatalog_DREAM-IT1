@@ -1,0 +1,12 @@
+<div class="container mt-5">
+    <h2>Statistiques sur les métadonnées</h2>
+    <ul>
+      <li *ngFor="let stat of metaDataStatistics | keyvalue">
+        {{ stat.key }}: {{ stat.value }}%
+      </li>
+    </ul>
+   <!--<button (click)="generatePDF()" class="btn btn-success">Télécharger PDF</button>--> 
+  </div>
+  <canvas #verticalChart></canvas>
+
+  

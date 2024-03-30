@@ -1,0 +1,13 @@
+<!-- request-access.component.html -->
+<div *ngIf="!isAccessApproved">
+    <button *ngIf="!isAccessRequested" (click)="onRequestAccess('ANYALYSTE')">Request Admin Access</button>
+    <p *ngIf="isAccessRequested">Access request pending approval.</p>
+    <button *ngIf="isAccessApproved && !showPendingRequests" (click)="onShowPendingRequests()">Show Pending Requests</button>
+    <div *ngIf="showPendingRequests">
+      <!-- Display the list of pending requests here -->
+      <ul>
+        <li *ngFor="let request of pendingRequests">{{ request.username }}</li>
+      </ul>
+    </div>
+  </div>
+  

@@ -1,0 +1,69 @@
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-lg-8 m">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Edit Profile</h2>
+                    <div class="avatar-lg rounded-circle mx-auto mb-3 position-relative" style="width: 150px; height: 150px; overflow: hidden;"
+                    (mouseover)="showEditIcon()" (mouseout)="hideEditIcon()">
+                   <img src="{{userProfile.image ? 'http://localhost:8082/PIDataCatalog/users/profile/' + userProfile.image : 'assets/images/users/profile.png'}}" alt="Profile Image" class="img-fluid" id="profileImage">
+
+                   <span class="position-absolute bottom-0 start-50 translate-middle-x" id="editIcon" style="display: none;">
+                       <!-- Add your edit icon here -->
+                       <!-- Example using Font Awesome: -->
+                       <i class="fas fa-pencil-alt"></i>
+                       <input type="file" style="display:flex;" accept="image/*" (change)="onImageSelected($event)">
+
+                       <span>Edit</span> 
+                   </span>
+               </div>
+                    <!-- Profile Edit Form -->
+                    <div class="mb-2 col-lg-3">
+                        <label>First Name:</label>
+                        <input class="form-control" type="text" [(ngModel)]="firstName">
+                    </div>
+                    <div class="mb-2 col-lg-3">
+                        <label>Last Name:</label>
+                        <input class="form-control" type="text" [(ngModel)]="lastName">
+                    </div>
+                    <div class="mb-4 col-lg-6">
+                        <label>Email:</label>
+                        <input class="form-control" type="email" [(ngModel)]="email">
+                    </div>
+                    <div class="mb-3 mb-0">
+                        <button class="btn btn-primary me-1" (click)="editProfile()">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Move Change Password Section to the Right -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Change Password</h2>
+                    <div class="mt-2 mt-2">
+                        <label>New Password:</label>
+                        <input class="form-control" type="password" [(ngModel)]="password">
+                    </div>
+                    <div class="mb-2 mt-2">
+                        <label>Retype Password:</label>
+                        <input class="form-control" type="password" [(ngModel)]="retypePassword">
+                    </div>
+                    <div class="mb-2 mb-0">
+                        <button class="btn btn-primary me-1" (click)="changePassword()">Change Password</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function showEditIcon() {
+        document.getElementById('editIcon').style.display = 'block';
+    }
+
+    function hideEditIcon() {
+        document.getElementById('editIcon').style.display = 'none';
+    }
+</script>
