@@ -3,6 +3,10 @@ import MetisMenu from 'metismenujs';
 import { Router, NavigationEnd } from '@angular/router';
 
 import { EventService } from '../../../core/services/event.service';
+<<<<<<< HEAD
+=======
+import { AuthService } from '../../../services/auth.service';
+>>>>>>> 87a445450 (integration user cleaned)
 
 
 import { MENU } from './menu';
@@ -21,7 +25,11 @@ export class SidebarComponent implements OnInit, AfterViewInit {
 
   @ViewChild('sideMenu') sideMenu: ElementRef;
 
+<<<<<<< HEAD
   constructor(private eventService: EventService, private router: Router) {
+=======
+  constructor(private eventService: EventService, private router: Router , private authService: AuthService) {
+>>>>>>> 87a445450 (integration user cleaned)
     router.events.forEach((event) => {
       if (event instanceof NavigationEnd) {
         this._activateMenuDropdown();
@@ -113,7 +121,17 @@ export class SidebarComponent implements OnInit, AfterViewInit {
    * Initialize
    */
   initialize(): void {
+<<<<<<< HEAD
     this.menuItems = MENU;
+=======
+    const isAdmin = this.authService.isAdmin();
+        this.menuItems = MENU.filter(item => {
+      if (item.id === 26) {
+        return isAdmin; // Display "Administration" menu item only if user is admin
+      }
+      return true; // Always display other menu items
+    });
+>>>>>>> 87a445450 (integration user cleaned)
   }
 
   /**

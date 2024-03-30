@@ -5,6 +5,7 @@ import { AuthenticationService } from '../services/auth.service';
 import { AuthfakeauthenticationService } from '../services/authfake.service';
 
 import { environment } from '../../../environments/environment';
+<<<<<<< HEAD
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard  {
@@ -32,4 +33,27 @@ export class AuthGuard  {
         this.router.navigate(['/account/login'], { queryParams: { returnUrl: state.url } });
         return false;
     }
+=======
+import { AuthService } from '../../services/auth.service';
+
+@Injectable({ providedIn: 'root' })
+export class AuthGuard  {
+    constructor(private authService: AuthService, private router: Router) {}
+
+
+    canActivate(): boolean {
+        this.authService.loadToken();
+        if (this.authService.getToken()==null ||
+        this.authService.isTokenExpired()) {
+          
+        
+            this.router.navigate(['/account/login']);       
+               return true;
+        } else {
+          // User doesn't have a valid token, redirect to login
+          this.router.navigate(['/']);
+          return false;
+        }
+      }
+>>>>>>> 87a445450 (integration user cleaned)
 }

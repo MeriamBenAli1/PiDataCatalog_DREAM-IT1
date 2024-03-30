@@ -17,6 +17,7 @@ import { AllCatalogsComponent } from './all-catalogs/all-catalogs.component';
 import { InformationAssetsComponent } from './information-assets/information-assets.component';
 import { MetadataImportsComponent } from './metadata-imports/metadata-imports.component';
 import { CatalogsRoutingModule } from './catalogs-routing.module';
+<<<<<<< HEAD
 import { AddFolderDialogComponent } from './add-folder-dialog/add-folder-dialog.component';
 
 // eya mat
@@ -46,6 +47,15 @@ import { AddMetadataDialogComponent } from './add-metadata-dialog/add-metadata-d
     ColumnMetadataComponent, 
     TableInterfaceComponent, 
     AddMetadataDialogComponent
+=======
+
+
+@NgModule({
+  // tslint:disable-next-line: max-line-length
+  declarations: [AllCatalogsComponent, 
+    InformationAssetsComponent, 
+    MetadataImportsComponent, 
+>>>>>>> 87a445450 (integration user cleaned)
 ],
   imports: [
     CommonModule,
@@ -64,6 +74,7 @@ import { AddMetadataDialogComponent } from './add-metadata-dialog/add-metadata-d
     NgbCollapseModule,
     NgSelectModule,
     NgxSliderModule,
+<<<<<<< HEAD
     NgbModalModule,
     
     
@@ -85,6 +96,9 @@ import { AddMetadataDialogComponent } from './add-metadata-dialog/add-metadata-d
 
     
 
+=======
+    NgbModalModule
+>>>>>>> 87a445450 (integration user cleaned)
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

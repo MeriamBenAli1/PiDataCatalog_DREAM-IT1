@@ -96,7 +96,11 @@ export const MENU: MenuItem[] = [
 
     {
         id: 5,
+<<<<<<< HEAD
         label: 'Gouvernanace',
+=======
+        label: 'Gouvernance',
+>>>>>>> 87a445450 (integration user cleaned)
         icon: 'ri-store-2-line',
         subItems: [
             {
@@ -188,6 +192,29 @@ export const MENU: MenuItem[] = [
         icon: ' ri-mac-line',
         subItems: [
             {
+<<<<<<< HEAD
+=======
+                id: 30,
+                label: 'Users',
+                icon: ' ri-user-line',
+                
+                subItems: [{
+                    id: 29, 
+                    label: 'Manage Users',
+                    link: '/users',
+                    parentId: 26
+                },{
+                    id: 32, 
+                    label: 'Access Demanded',
+                    link: '/access-demand',
+                    parentId: 26
+                },
+    
+            ]
+
+            },
+            {
+>>>>>>> 87a445450 (integration user cleaned)
                 id: 27,
                 label: 'Catalogs',
                 link: '/catalogs',
@@ -214,4 +241,8 @@ export const MENU: MenuItem[] = [
         icon: 'ri-chat-1-line',
         link: '/'
     },
+<<<<<<< HEAD
    ];
+=======
+   ];
+>>>>>>> 87a445450 (integration user cleaned)

@@ -24,9 +24,15 @@
     "@angular/platform-browser-dynamic": "^17.0.6",
     "@angular/router": "^17.0.6",
     "@asymmetrik/ngx-leaflet": "^17.0.0",
+<<<<<<< HEAD
     "@ckeditor/ckeditor5-angular": "^7.0.1",
     "@ckeditor/ckeditor5-build-classic": "^40.2.0",
     "@fortawesome/fontawesome-free": "^6.5.1",
+=======
+    "@auth0/angular-jwt": "^5.2.0",
+    "@ckeditor/ckeditor5-angular": "^7.0.1",
+    "@ckeditor/ckeditor5-build-classic": "^40.2.0",
+>>>>>>> 87a445450 (integration user cleaned)
     "@fullcalendar/angular": "^6.1.10",
     "@fullcalendar/bootstrap": "^6.1.10",
     "@fullcalendar/core": "^6.1.10",
@@ -36,12 +42,23 @@
     "@fullcalendar/timegrid": "^6.1.10",
     "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "@ng-select/ng-select": "^12.0.4",
+<<<<<<< HEAD
     "@ngtools/webpack": "^17.3.2",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "@popperjs/core": "^2.11.8",
     "ajv-errors": "^3.0.0",
     "angular-highcharts": "^17.0.1",
+=======
+    "angular-highcharts": "^17.0.1",
+    "highcharts": "^11.4.0",
+
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
+    "jspdf": "^2.5.1",
+    "@popperjs/core": "^2.11.8",
+    "ajv-errors": "^3.0.0",
+>>>>>>> 87a445450 (integration user cleaned)
     "angular-ng-stepper": "^2.0.0",
     "apexcharts": "^3.44.2",
     "bootstrap": "5.3.2",
@@ -50,8 +67,11 @@
     "echarts": "^5.4.3",
     "firebase": "^10.7.1",
     "fullcalendar": "^6.1.10",
+<<<<<<< HEAD
     "highcharts": "^11.4.0",
     "jspdf": "^2.5.1",
+=======
+>>>>>>> 87a445450 (integration user cleaned)
     "leaflet": "^1.9.4",
     "metismenujs": "^1.4.0",
     "ng-apexcharts": "^1.8.0",
@@ -66,8 +86,11 @@
     "ngx-pipes": "^3.2.2",
     "ngx-slider-v2": "^17.0.0",
     "ngx-ui-switch": "^15.0.0",
+<<<<<<< HEAD
     "primeicons": "^6.0.1",
     "primeng": "^17.8.0",
+=======
+>>>>>>> 87a445450 (integration user cleaned)
     "rxjs": "~7.8.1",
     "simplebar-angular": "^3.2.4",
     "sweetalert2": "^11.10.1",
@@ -105,4 +128,8 @@
     "tslint": "~6.1.3",
     "typescript": "~5.2.2"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 87a445450 (integration user cleaned)

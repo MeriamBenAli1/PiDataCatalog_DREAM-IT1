@@ -22,24 +22,55 @@
                   <div class="p-2 mt-5">
                     <form class="form-horizontal" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
                       @if(successmsg){
+<<<<<<< HEAD
                       <ngb-alert type="success" [dismissible]="false">Registeration successfull.
                       </ngb-alert>
+=======
+                        <ngb-alert type="success" [dismissible]="false"></ngb-alert>
+                     
+>>>>>>> 87a445450 (integration user cleaned)
                       }
                       @if(error){
                       <ngb-alert type="danger" [dismissible]="false">{{ error }}</ngb-alert>
                       }
                       <div class="form-group auth-form-group-custom mb-4">
                         <i class="ri-user-2-line auti-custom-input-icon"></i>
+<<<<<<< HEAD
                         <label for="username">Username</label>
                         <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" id="username" placeholder="Enter username">
                         @if(submitted && f.username.errors){
                         <div class="invalid-feedback">
                           @if(f.username.errors.required){
                           <div>Userame is required</div>
+=======
+                        <label for="nom">First name</label>
+                        <input type="text" formControlName="nom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nom.errors }" id="nom" placeholder="Enter First name">
+                        @if(submitted && f.nom.errors){
+                        <div class="invalid-feedback">
+                          @if(f.nom.errors.required){
+                          <div>First name is required</div>
+>>>>>>> 87a445450 (integration user cleaned)
                           }
                         </div>
                         }
                       </div>
+<<<<<<< HEAD
+=======
+
+                      <div class="form-group auth-form-group-custom mb-4">
+                        <i class="ri-user-2-line auti-custom-input-icon"></i>
+                        <label for="prenom">Last name</label>
+                        <input type="text" formControlName="prenom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.prenom.errors }" id="prenom" placeholder="Enter Last name">
+                        @if(submitted && f.prenom.errors){
+                        <div class="invalid-feedback">
+                          @if(f.prenom.errors.required){
+                          <div>Last name is required</div>
+                          }
+                        </div>
+                        }
+                      </div>
+                  
+>>>>>>> 87a445450 (integration user cleaned)
                       <div class="form-group auth-form-group-custom mb-4">
                         <i class="ri-mail-line auti-custom-input-icon"></i>
                         <label for="email">Email</label>

@@ -1,0 +1,62 @@
+<div class="table-responsive mt-3">
+    <table class="table table-centered datatable dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+      <thead class="thead-light">
+        <tr>
+          <th style="width: 20px;">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customercheck" />
+              <label class="form-check-label" for="customercheck">&nbsp;</label>
+            </div>
+          </th>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th style="width: 120px;">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(item of users;track $index){
+        <tr>
+          <td>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customercheck{{$index}}" />
+              <label class="form-check-label mb-0" for="customercheck{{$index}}">&nbsp;</label>
+            </div>
+          </td>
+          <td>{{item.nom}}</td>
+          <td>{{item.prenom}}</td>
+          <td>{{item.email}}</td>
+          <td>
+            <ng-container *ngFor="let role of item.roles">
+            <button type="button" class="badge bg-info ms-1" (click)="EditRole(item.id,role.name)">
+              {{ role.name }}
+            </button>
+          </ng-container></td>
+        
+
+          <td>
+            <a *ngIf="!isCurrentUserAdmin(item.role)"  href="javascript:void(0);" (click)="toggleEditingRole(item)" class="me-3 text-primary" v-b-tooltip.hover title="Edit" >
+              <i class="mdi mdi-pencil font-size-18"></i>
+            </a>
+            <ng-container *ngIf="item.editingRole">
+                <!-- Use ngModel to bind the selected role to item.selectedRole -->
+                <select [(ngModel)]="item.selectedRole">
+                  <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+                </select>
+                <button class="text-success" (click)="saveRole(item)">
+                  <i class="mdi mdi-check font-size-18"></i>
+                </button>
+                <a class="text-danger" (click)="cancelEditingRole(item)">
+                  <i class="mdi mdi-close font-size-18"></i>
+                </a>
+              </ng-container>
+            <a  *ngIf="!isCurrentUserAdmin(item.role)"  (click)="confirm(item.id)" class="text-danger" v-b-tooltip.hover title="Delete">
+              <i class="mdi mdi-trash-can font-size-18"></i>
+            </a>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>

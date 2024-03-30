@@ -15,15 +15,30 @@ import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { UiModule } from '../../shared/ui/ui.module';
 import { CatalogsComponent } from './catalogs/catalogs.component';
 import { LineageComponent } from './lineage/lineage.component';
+<<<<<<< HEAD
 import { WorkFlowsComponent } from './work-flows/work-flows.component';
+=======
+import { UsersComponent } from './users/users.component';
+import { WorkFlowsComponent } from './work-flows/work-flows.component';
+import { DemandedAccessComponent } from './demanded-access/demanded-access.component';
+
+>>>>>>> 87a445450 (integration user cleaned)
 import { AdministrationRoutingModule } from './administration-routing.module';
 
 
 @NgModule({
   // tslint:disable-next-line: max-line-length
+<<<<<<< HEAD
   declarations: [CatalogsComponent, 
     LineageComponent, 
     WorkFlowsComponent, 
+=======
+  declarations: [UsersComponent,
+    CatalogsComponent, 
+    LineageComponent, 
+    WorkFlowsComponent, 
+    DemandedAccessComponent,
+>>>>>>> 87a445450 (integration user cleaned)
 ],
   imports: [
     CommonModule,

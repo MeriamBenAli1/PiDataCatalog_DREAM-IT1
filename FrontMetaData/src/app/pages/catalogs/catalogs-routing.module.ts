@@ -3,10 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AllCatalogsComponent } from './all-catalogs/all-catalogs.component';
 import { InformationAssetsComponent } from './information-assets/information-assets.component';
 import { MetadataImportsComponent } from './metadata-imports/metadata-imports.component';
+<<<<<<< HEAD
 import { AddFolderDialogComponent } from './add-folder-dialog/add-folder-dialog.component';
 import { ColumnMetadataComponent } from './column-metadata/column-metadata.component';
 import { TableInterfaceComponent } from './table-interface/table-interface.component';
 import { AddMetadataDialogComponent } from './add-metadata-dialog/add-metadata-dialog.component';
+=======
+>>>>>>> 87a445450 (integration user cleaned)
 
 
 
@@ -23,6 +26,7 @@ const routes: Routes = [
         path: 'metadataImports',
         component: MetadataImportsComponent
     },
+<<<<<<< HEAD
   
     {
         path: 'AddFolder',
@@ -33,6 +37,8 @@ const routes: Routes = [
     { path: 'addMetaData',component: AddMetadataDialogComponent },
     
     
+=======
+>>>>>>> 87a445450 (integration user cleaned)
 
 ];
 

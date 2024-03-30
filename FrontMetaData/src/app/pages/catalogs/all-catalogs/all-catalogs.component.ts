@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar'; // Importer MatSnackBar
@@ -5,10 +6,14 @@ import { AddFolderDialogComponent } from '../add-folder-dialog/add-folder-dialog
 import { Router } from '@angular/router';
 import { FolderServiceService } from '../metadata-imports/service/folder-service.service';
 import { Folder } from '../metadata-imports/models/FolderModel';
+=======
+import { Component } from '@angular/core';
+>>>>>>> 87a445450 (integration user cleaned)
 
 @Component({
   selector: 'app-all-catalogs',
   templateUrl: './all-catalogs.component.html',
+<<<<<<< HEAD
   styleUrls: ['./all-catalogs.component.scss'] // Corriger styleUrl en styleUrls
 })
 export class AllCatalogsComponent implements OnInit {
@@ -116,3 +121,10 @@ if (!confirmation) {
   
 }
 }
+=======
+  styleUrl: './all-catalogs.component.scss'
+})
+export class AllCatalogsComponent {
+
+}
+>>>>>>> 87a445450 (integration user cleaned)

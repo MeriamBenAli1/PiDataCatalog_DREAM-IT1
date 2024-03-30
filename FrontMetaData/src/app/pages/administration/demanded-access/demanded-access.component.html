@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div id="tickets-table_filter" class="dataTables_filter text-md-end"><label class="d-inline-flex align-items-center">Search:
+          <input type="text" name="searchTerm" class="form-control form-control-sm ms-2" aria-controls="tickets-table"  /></label></div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-centered">
+      <thead class="table-light">
+        <tr>
+          <th style="width: 26px;" class="sorting_disabled" rowspan="1" colspan="1">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="ordercheck">
+              <label class="form-check-label mb-0" for="ordercheck">&nbsp;</label>
+            </div>
+          </th>
+          <th>Demand ID</th>
+         
+          <th>User Email</th>
+          <th>User Name</th>
+          <th>Demanded Role</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+   
+        <tr *ngFor="let user of userData">
+            <ng-container *ngIf="!user.accessApproved">
+          <td class="dtr-control">
+            <div class="form-check">
+              <label class="form-check-label mb-0" for="ordercheck10">&nbsp;</label>
+            </div>
+          </td>
+          <td>{{user.id }}</td>
+          
+          <td>{{ user.user.email}}</td>
+          <td>{{ user.user.nom + ' ' + user.user.prenom  }}</td>
+          <td>
+            <div class="badge font-size-12" [ngClass]="{'bg-danger-subtle text-danger': user.role.name === 'UTLISATEUR_AFFAIRE',
+            'bg-success-subtle text-success':user.role.name=== 'ADMIN',  'bg-success-subtle text-md-end':user.role.name=== 'RESPONSABLE_DONEES',
+            'bg-warning-subtle text-warning': user.role.name === 'ANYALYSTE'}">{{user.role.name}}
+          </div>
+          </td>
+          <td>
+            <button  type="button" class="btn btn-success" (click)="approveRoleAndAccess(user.id)"><i class="ri-check-line align-middle me-"></i>Approve</button>
+          </td>
+        </ng-container>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>

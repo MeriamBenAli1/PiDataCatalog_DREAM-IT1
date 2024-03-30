@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder,Validators,FormGroup } from "@angular/forms"
 import { FormControl } from '@angular/forms';
@@ -7,12 +8,16 @@ import { MatSnackBar} from '@angular/material/snack-bar';
 import { MatRadioChange } from '@angular/material/radio';
 
 
+=======
+import { Component } from '@angular/core';
+>>>>>>> 87a445450 (integration user cleaned)
 
 @Component({
   selector: 'app-metadata-imports',
   templateUrl: './metadata-imports.component.html',
   styleUrl: './metadata-imports.component.scss'
 })
+<<<<<<< HEAD
 
 export class MetadataImportsComponent implements OnInit{
   
@@ -166,3 +171,8 @@ export class MetadataImportsComponent implements OnInit{
   }
 }
 
+=======
+export class MetadataImportsComponent {
+
+}
+>>>>>>> 87a445450 (integration user cleaned)

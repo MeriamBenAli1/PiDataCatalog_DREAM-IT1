@@ -7,6 +7,10 @@ import { AuthenticationService } from '../../../core/services/auth.service';
 import { AuthfakeauthenticationService } from '../../../core/services/authfake.service';
 import { LanguageService } from '../../../core/services/language.service';
 import { environment } from '../../../../environments/environment';
+<<<<<<< HEAD
+=======
+import { UserService } from '../../../services/user.service';
+>>>>>>> 87a445450 (integration user cleaned)
 
 @Component({
   selector: 'app-topbar',
@@ -14,10 +18,18 @@ import { environment } from '../../../../environments/environment';
   styleUrls: ['./topbar.component.scss']
 })
 export class TopbarComponent implements OnInit {
+<<<<<<< HEAD
 
   element: any;
   configData: any;
   cookieValue;
+=======
+  userProfile: any;
+  element: any;
+  configData: any;
+  cookieValue;
+  nameuser: any;
+>>>>>>> 87a445450 (integration user cleaned)
   flagvalue;
   countryName;
   valueset: string;
@@ -31,18 +43,31 @@ export class TopbarComponent implements OnInit {
   ];
 
   // tslint:disable-next-line: max-line-length
+<<<<<<< HEAD
   constructor(@Inject(DOCUMENT) private document: any, private router: Router, private authService: AuthenticationService, private authFackservice: AuthfakeauthenticationService, public languageService: LanguageService, public cookiesService: CookieService) { }
+=======
+  constructor(@Inject(DOCUMENT) private document: any, private router: Router, private authService: AuthenticationService, private authFackservice: AuthfakeauthenticationService, public languageService: LanguageService, public cookiesService: CookieService,private userService :UserService) { }
+>>>>>>> 87a445450 (integration user cleaned)
 
   @Output() mobileMenuButtonClicked = new EventEmitter();
   @Output() settingsButtonClicked = new EventEmitter();
 
   ngOnInit(): void {
+<<<<<<< HEAD
+=======
+    this.loadUserProfile();
+    
+>>>>>>> 87a445450 (integration user cleaned)
     this.element = document.documentElement;
     this.configData = {
       suppressScrollX: true,
       wheelSpeed: 0.3
     };
 
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 87a445450 (integration user cleaned)
     this.cookieValue = this.cookiesService.get('lang');
     const val = this.listLang.filter(x => x.lang === this.cookieValue);
     this.countryName = val.map(element => element.text);
@@ -51,6 +76,11 @@ export class TopbarComponent implements OnInit {
     } else {
       this.flagvalue = val.map(element => element.flag);
     }
+<<<<<<< HEAD
+=======
+
+   
+>>>>>>> 87a445450 (integration user cleaned)
   }
 
   /**
@@ -60,7 +90,18 @@ export class TopbarComponent implements OnInit {
     event.preventDefault();
     this.mobileMenuButtonClicked.emit();
   }
+<<<<<<< HEAD
 
+=======
+  loadUserProfile() {
+    const userDetails = localStorage.getItem('userDetails');
+    if (userDetails) {
+      this.userProfile = JSON.parse(userDetails);
+    } else {
+      console.error('User details not found in localStorage');
+    }
+  }
+>>>>>>> 87a445450 (integration user cleaned)
   /**
    * Toggles the right sidebar
    */
@@ -119,11 +160,17 @@ export class TopbarComponent implements OnInit {
    * Logout the user
    */
   logout() {
+<<<<<<< HEAD
     if (environment.defaultauth === 'firebase') {
       this.authService.logout();
     } else {
       this.authFackservice.logout();
     }
+=======
+    localStorage.removeItem('jwt');
+    localStorage.removeItem('userDetails');
+    this.router.navigate(['/login']);
+>>>>>>> 87a445450 (integration user cleaned)
     this.router.navigate(['/account/login']);
   }
 }

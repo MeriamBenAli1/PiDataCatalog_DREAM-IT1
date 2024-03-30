@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+<<<<<<< HEAD
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+=======
+import { ProfileComponent } from './profile/profile.component';
+
+import { DashboardComponent } from './dashboard/dashboard.component';
+>>>>>>> 87a445450 (integration user cleaned)
 import { AjouterPolicyComponent } from '../ajouter-policy/ajouter-policy.component';
 import { ListPolicyComponent } from '../list-policy/list-policy.component';
 import { ModifierPolicyComponent } from '../modifier-policy/modifier-policy.component';
@@ -19,11 +25,16 @@ import { StatInterfaceComponent } from '../stat-interface/stat-interface.compone
 import { StatMetadataComponent } from '../stat-metadata/stat-metadata.component';
 
 
+<<<<<<< HEAD
 
 const routes: Routes = [
     { path: '', component: DashboardComponent },
     //hmdll ya rabiii
     
+=======
+const routes: Routes = [
+    { path: '', component: DashboardComponent },
+>>>>>>> 87a445450 (integration user cleaned)
     { path: 'Ajouter-policy', component: AjouterPolicyComponent },
     { path: 'List-policy', component: ListPolicyComponent },
     { path: 'List-policyUser', component: ListPolicyUserComponent },
@@ -42,6 +53,7 @@ const routes: Routes = [
     { path: 'Statpolicies', component: StatPolicyComponent },
     { path: 'StatMetaData', component: StatMetadataComponent },
 
+<<<<<<< HEAD
 
   
     
@@ -51,6 +63,15 @@ const routes: Routes = [
     { path:'administration',loadChildren:()=>import('./administration/administration.module').then(m=>m.AdministrationModule)},
     { path: 'Gouvernanace', loadChildren: () => import('./Gouvernanace/Gouvernanace.module').then(m => m.GouvernanaceModule) },
    
+=======
+    { path: 'profile', component: ProfileComponent },
+    { path: 'Gouvernanace', loadChildren: () => import('./Gouvernanace/Gouvernanace.module').then(m => m.GouvernanaceModule) },
+    { path:'data',loadChildren:()=>import('./data/data.module').then(m=>m.DataModule)},
+    { path:'projects',loadChildren:()=>import('./projects/projects.module').then(m=>m.ProjectsModule)},
+    { path:'catalogs',loadChildren:()=>import('./catalogs/catalogs.module').then(m=>m.CatalogsModule)},
+    { path:'administration',loadChildren:()=>import('./administration/administration.module').then(m=>m.AdministrationModule)}
+
+>>>>>>> 87a445450 (integration user cleaned)
 ];
 
 @NgModule({

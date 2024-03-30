@@ -1,4 +1,14 @@
 <div class="container-fluid">
   <app-pagetitle title="Dashboard" [breadcrumbItems]="breadCrumbItems"></app-pagetitle>
 
+<<<<<<< HEAD
+=======
+</div>
+<div class="row">
+  @for(stat of statData;track $index){
+  <div class="col-md-4">
+    <app-stat [title]="stat.title" [value]="stat.value" [icon]="stat.icon"></app-stat>
+  </div>
+  }
+>>>>>>> 87a445450 (integration user cleaned)
 </div>
