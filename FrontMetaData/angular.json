@@ -84,11 +84,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "proxyConfig": "proxy.conf.json",
             "buildTarget": "nazox:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "nazox:build:production"
+              "browserTarget": "nazox:build:production"
             }
           }
         },
@@ -140,6 +141,7 @@
       }
     }
   },
+  "defaultProject": "nazox",
   "cli": {
     "analytics": "915204d4-f209-4eda-93c6-37a8757fd25c",
     "schematicCollections": [

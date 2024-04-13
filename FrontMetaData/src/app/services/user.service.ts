@@ -1,6 +1,6 @@
 // user.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient ,HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { User } from '../model/user.model';
@@ -23,6 +23,14 @@ export class UserService {
     return this.http.get(`${this.apiUrl}/users/${userId}`);
   }
 
+  
+  getUserImageById(userId: number): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/users/${userId}`);
+  }
+  loadUserImage(imageFileName: string) {
+    const imageUrl = `${this.apiUrl}/users/profile/${imageFileName}`;
+    return imageUrl;
+  }
   // modifyUserRole(userId: number, newRole: Role): Observable<any> {
   //   const url = `${this.apiUrl}/users/modify-role/${userId}`;
   //   const body = { newRole: newRole }; // Assuming your API expects a body with a 'newRole' property
@@ -66,4 +74,18 @@ export class UserService {
     return this.http.get<string>(`${this.apiUrl}/users/profile/${filename}`, { responseType: 'text' as 'json' });
   }
 
+  updateImage(idUser: number, file: File): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('image', file, file.name);
+    
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    
+    return this.http.put(`${this.apiUrl}users/updateImage/${idUser}`, formData, { headers });
+  }
+
+
+  updateUSER(user: User): Observable<User> {
+    return this.http.put<User>(`${this.apiUrl}users/update`, user);
+  }
 }

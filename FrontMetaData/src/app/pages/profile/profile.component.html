@@ -12,7 +12,7 @@
                        <!-- Add your edit icon here -->
                        <!-- Example using Font Awesome: -->
                        <i class="fas fa-pencil-alt"></i>
-                       <input type="file" style="display:flex;" accept="image/*" (change)="onImageSelected($event)">
+                       <input type="file" style="display:flex;" accept="image/*" (change)="onImageSelected($event, userProfile.id)">
 
                        <span>Edit</span> 
                    </span>
@@ -33,6 +33,8 @@
                     <div class="mb-3 mb-0">
                         <button class="btn btn-primary me-1" (click)="editProfile()">Save Changes</button>
                     </div>
+                    <span *ngIf="successMessageProfile" class="text-success">{{ successMessageProfile }}</span>
+
                 </div>
             </div>
         </div>
@@ -52,7 +54,10 @@
                     </div>
                     <div class="mb-2 mb-0">
                         <button class="btn btn-primary me-1" (click)="changePassword()">Change Password</button>
+                        
+
                     </div>
+                    <span *ngIf="successMessage" class="text-success">{{ successMessage }}</span>
                 </div>
             </div>
         </div>

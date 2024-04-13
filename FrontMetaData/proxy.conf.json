@@ -1,0 +1,8 @@
+{
+    "/api": {
+      "target": "https://api.seon.io",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
+  

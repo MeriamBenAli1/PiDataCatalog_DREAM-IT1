@@ -8,6 +8,7 @@ import { NgbAccordionModule, NgbNavModule, NgbTypeaheadModule, NgbPaginationModu
 //Wizard
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { NgStepperModule } from 'angular-ng-stepper';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { NgxSliderModule } from 'ngx-slider-v2';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -17,12 +18,15 @@ import { DataBasesComponent } from './data-bases/data-bases.component';
 import { DataRequestsComponent } from './data-requests/data-requests.component';
 import { PlateformConnectionComponent } from './plateform-connection/plateform-connection.component';
 import { DataRoutingModule } from './data-routing.module';
+import { ProfileComponent } from '../profile/profile.component';
+
 
 @NgModule({
   // tslint:disable-next-line: max-line-length
   declarations: [DataBasesComponent, 
     DataRequestsComponent, 
     PlateformConnectionComponent, 
+    ProfileComponent,
 ],
   imports: [
     CommonModule,

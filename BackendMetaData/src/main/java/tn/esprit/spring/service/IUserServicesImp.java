@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import tn.esprit.spring.enities.DemandedRole;
@@ -33,6 +35,7 @@ public class IUserServicesImp implements IUserServices {
     IDemandedRoleRepository iDemandedRoleRepository;
     private final IUserRepository userRepository;
     private final  IDemandedRoleService iDemandedRoleService;
+   // private final PasswordEncoder passwordEncoder;
 
     Set<Role> roles = new HashSet<>();
     @Override
@@ -67,7 +70,7 @@ public class IUserServicesImp implements IUserServices {
                     existingUser.setEmail(user.getEmail());
                 }
                 if (user.getPassword() != null) {
-                    existingUser.setPassword(user.getPassword());
+                    existingUser.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
                 }
                 return userRepository.save(existingUser);
             }

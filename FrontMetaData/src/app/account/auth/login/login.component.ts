@@ -15,6 +15,8 @@ import { environment } from '../../../../environments/environment';
 import { User } from '../../../model/user.model';
 import { AuthService } from '../../../services/auth.service';
 import { UserService } from '../../../services/user.service';
+import { ApiService } from '../../../services/api.service';
+
 
 @Component({
   selector: 'app-login',
@@ -27,8 +29,7 @@ export class LoginComponent implements OnInit {
   user = new User();
   err : number = 0;
 
-  constructor(private authService : AuthService,
-              private router: Router , private userService :UserService) { }
+  constructor(private authService : AuthService,private router: Router , private userService :UserService ,private  apiService:ApiService) { }
 
   ngOnInit(): void {
  
@@ -66,7 +67,7 @@ export class LoginComponent implements OnInit {
 
         // Check if the user is an admin
         if (this.authService.isAdmin()) {
-          // Redirect to the admin route
+        this.apiService.sendMessage();
           this.router.navigate(['/admin']); // Change '/admin' to the actual admin route
         } else {
           // Redirect to the default route for non-admin users
