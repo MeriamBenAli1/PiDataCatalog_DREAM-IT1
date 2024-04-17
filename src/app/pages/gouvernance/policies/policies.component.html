@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <div class="filters">
+    <h5>Search</h5>
+    <div class="form-group">
+      <input matInput (keyup)="applyFilter($event)" type="text" class="form-control" placeholder="Search Keywords" name="keyword" value="">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary btn-block" type="submit">Search</button>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive mx-auto text-center">
+          <table class="table custom-table">
+            <thead class="thead-dark">
+              <tr>
+                <th>Nom</th>
+                <th>Règles</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let policy of listpolicy" class="table-row">
+                <td>{{ policy.nom }}</td>
+                <td>{{ policy.rules }}</td>
+                <td>
+                  <!-- Bouton pour rediriger vers le composant StatPolicyComponent -->
+               
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="btn btn-success" [routerLink]="['/Statpolicies']">Stat Policies</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

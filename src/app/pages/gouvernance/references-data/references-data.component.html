@@ -1,0 +1,46 @@
+<div class="container mt-5">
+    <div class="filters">
+      <h5>Search</h5>
+      <div class="form-group">
+        <input matInput (keyup)="applyFilter($event)" type="text" class="form-control" placeholder="Search Keywords" name="keyword" value="">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block" type="submit">Search</button>
+      </div>
+    </div>
+  
+    <div class="table-responsive">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-responsive mx-auto text-center">
+            <table class="table custom-table">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Name</th>
+                  <th>Source</th>
+                  <th>Description</th>
+                  <th>Creation Date</th>
+                  <th>Size</th>
+                  <th>Creator</th>
+                  <th>Location</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let metaData of listMetaData" class="table-row">
+                  <td>{{ metaData.name }}</td>
+                  <td>{{ metaData.source }}</td>
+                  <td>{{ metaData.description }}</td>
+                  <td>{{ metaData.creationDate }}</td>
+                  <td>{{ metaData.size }}</td>
+                  <td>{{ metaData.creator }}</td>
+                  <td>{{ metaData.location }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-success" [routerLink]="['/StatMetaData']">Stat Meta</button>
+  </div>
+  
