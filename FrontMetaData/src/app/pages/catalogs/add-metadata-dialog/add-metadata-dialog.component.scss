@@ -1,0 +1,63 @@
+.title-frame {
+    background-color: #4fa3d3;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .dialog-title {
+    color: #fff;
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .dialog-content {
+    padding: 20px;
+  }
+  
+  .form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .dialog-actions {
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .cancel-button {
+    color: #dc3545;
+    background-color: transparent;
+    border: 1px solid #dc3545;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #d43444;
+    color: #fff;
+  }
+  
+  .add-button {
+    margin-left: 10px;
+    background-color: #57c4e2;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-button:hover {
+    background-color: #6eb9c5;
+  }
+  
+  /* Corrected and Enhanced Disabled and Active Styles */
+  .add-button[disabled] {
+    color: #757575 !important; /* Darker grey for text to enhance contrast */
+    background-color: #e0e0e0 !important; /* Light grey for the disabled background */
+    cursor: not-allowed; /* Change cursor to indicate the button is disabled */
+  }
+  
+  .add-button:not([disabled]) {
+    color: #fff !important; /* Keep text white for better readability */
+    background-color: #1976d2 !important; /* Use a vibrant blue for the active state */
+    cursor: pointer; /* Ensure it's clear the button is clickable */
+  }
+  

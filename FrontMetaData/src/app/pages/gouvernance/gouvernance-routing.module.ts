@@ -10,6 +10,7 @@ import { DataQualityComponent } from './data-quality/data-quality.component';
 import { PoliciesComponent } from './policies/policies.component';
 import { ReferencesDataComponent } from './references-data/references-data.component';
 import { RulesComponent } from './rules/rules.component';
+import { StatMetadataComponent } from 'src/app/stat-metadata/stat-metadata.component';
 
 const routes: Routes = [
     {
@@ -48,7 +49,13 @@ const routes: Routes = [
     {
         path: 'rules',
         component: RulesComponent
+    },
+    {
+        path: 'StatMetaData',
+        component: StatMetadataComponent
     }
+
+    
 ];
 
 @NgModule({

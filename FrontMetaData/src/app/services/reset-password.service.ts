@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ResetPasswordService {
-  private resetUrl = 'http://localhost:8093/GestionUser/auth/forgetpassword'; // Replace with your actual reset endpoint URL
-  private apiUrl = 'http://localhost:8093/GestionUser/auth'; // Replace with your actual reset endpoint URL
+  private resetUrl = 'http://localhost:8082/PIDataCatalog/auth/forgetpassword'; // Replace with your actual reset endpoint URL
+  private apiUrl = 'http://localhost:8082/PIDataCatalog/auth'; // Replace with your actual reset endpoint URL
 
   constructor(private http: HttpClient) { }
 

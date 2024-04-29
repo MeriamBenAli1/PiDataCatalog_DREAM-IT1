@@ -1,8 +1,8 @@
 <!-- request-access.component.html -->
-<div *ngIf="!isAccessApproved">
-    <button *ngIf="!isAccessRequested" (click)="onRequestAccess('ANYALYSTE')">Request Admin Access</button>
+<div class="container-fluid text-center " *ngIf="!isAccessApproved">
+    <button class="btn btn-primary me-1 " *ngIf="!isAccessRequested" (click)="onRequestAccess('ANYALYSTE')">Request Admin Access</button>
     <p *ngIf="isAccessRequested">Access request pending approval.</p>
-    <button *ngIf="isAccessApproved && !showPendingRequests" (click)="onShowPendingRequests()">Show Pending Requests</button>
+    <button  class="btn btn-primary me-1" *ngIf="isAccessApproved && !showPendingRequests" (click)="onShowPendingRequests()">Show Pending Requests</button>
     <div *ngIf="showPendingRequests">
       <!-- Display the list of pending requests here -->
       <ul>

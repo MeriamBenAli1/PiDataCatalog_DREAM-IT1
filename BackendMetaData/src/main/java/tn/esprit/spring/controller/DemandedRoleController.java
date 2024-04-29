@@ -1,6 +1,7 @@
 package tn.esprit.spring.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.spring.enities.DemandedRole;
 import tn.esprit.spring.enities.ERole;
@@ -21,6 +22,7 @@ public class DemandedRoleController {
     public DemandedRole addDemand(@RequestParam ERole role, @RequestParam  Long userId ,@RequestParam boolean accessApproved ) {
         return iDemandedRoleService.addDemandedRole(userId,role,accessApproved);
     }
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/all")
     public List<DemandedRole> getAllDemands() {
         return iDemandedRoleService.getAllDemandedRoles();

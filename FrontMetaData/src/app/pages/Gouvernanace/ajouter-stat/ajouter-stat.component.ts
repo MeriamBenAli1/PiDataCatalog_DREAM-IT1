@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 
 export class AjouterStatComponent implements OnInit {
   statForm: FormGroup;
-  choixOptions = ['Policy', 'Rules', 'MetaData']; // Exemple d'options
+  choixOptions = ['Policy',  'MetaData']; // Exemple d'options
 
   constructor(private fb: FormBuilder, private statService: PolicyService , private router: Router) { }
 

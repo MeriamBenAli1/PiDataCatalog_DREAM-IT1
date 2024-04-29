@@ -196,5 +196,13 @@ System.out.println(idUser);
             throw new RuntimeException("Error processing file", e);
         }
     }
+    @Override
+    public List<User> getAllUsersWithAudits() {
+        return userRepository.findAllWithAudits();
+    }
 
+    @Override
+    public List<User> getAllUsersWithAuditsArchived() {
+        return userRepository.findAllWithAuditsArchived();
+    }
 }

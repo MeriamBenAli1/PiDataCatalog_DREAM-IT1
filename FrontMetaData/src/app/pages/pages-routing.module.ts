@@ -17,6 +17,7 @@ import { ListPolicyUserComponent } from '../list-policy-user/list-policy-user.co
 import { ChaatBootComponent } from '../chaat-boot/chaat-boot.component';
 import { StatInterfaceComponent } from '../stat-interface/stat-interface.component';
 import { StatMetadataComponent } from '../stat-metadata/stat-metadata.component';
+import { AjouterStatComponent } from './Gouvernanace/ajouter-stat/ajouter-stat.component';
 
 
 const routes: Routes = [
@@ -33,7 +34,7 @@ const routes: Routes = [
     { path: 'mail', component: EmailSenderComponent },
     { path: 'chatboot', component: ChaatBootComponent },
     { path: 'Extraction', component: ExtractionPDFComponent },
-    
+    { path: 'Stat', component: AjouterStatComponent }, 
     { path: 'StatInterface', component: StatInterfaceComponent },
   
     { path: 'Statpolicies', component: StatPolicyComponent },

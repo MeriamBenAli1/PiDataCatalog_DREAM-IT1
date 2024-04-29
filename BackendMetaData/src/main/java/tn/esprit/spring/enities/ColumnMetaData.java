@@ -1,5 +1,6 @@
 package tn.esprit.spring.enities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,7 +29,7 @@ public class ColumnMetaData implements Serializable {
     @CollectionTable(name = "column_tags", joinColumns = @JoinColumn(name = "id_column")) // This specifies the table that stores the collection
     @Column(name = "tag") // Name of the column that stores the tags
     private Set<String> tags = new HashSet<>(); // Using a Set to avoid duplicate tags
-
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_table")
     private MetaData parentDataTable;

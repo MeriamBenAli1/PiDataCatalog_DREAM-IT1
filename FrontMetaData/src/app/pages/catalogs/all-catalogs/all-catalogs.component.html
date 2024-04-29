@@ -1,1 +1,27 @@
-<p>all-catalogs works!</p>
+<div class="folders-app">
+    <div class="search-add-container">
+        <div class="search-box">
+            <input type="text" placeholder="Search Keywords" (keyup)="applyFilter($event)" class="search-input"/>
+
+            <button class="search-button"><i class="material-icons">search</i></button>
+        </div>
+        <button class="add-folder" (click)="openAddFolderDialog()"><i class="material-icons">add</i>Add Folder</button>
+    </div>
+    <div></div>
+    <div class="folders-grid">
+        <div class="folder-card mat-elevation-z2" *ngFor="let folder of folders">
+            <div class="folder-header">
+                <img src="{{folderImagePath}}" alt="Folder Image" class="folder-image"/>
+            </div>
+            <div class="folder-body">
+                <h3 class="folder-name">{{folder.name}}</h3>
+                <p class="folder-description">{{folder.description}}</p>
+            </div>
+            <div class="folder-actions">
+                
+                <button class="action-button delete" (click)="deleteFolder(folder)"><i class="material-icons">delete</i></button>
+                <button class="action-button open" (click)="redirectToTables()"><i class="material-icons">open_in_new</i></button>
+            </div>
+        </div>
+    </div>
+</div>

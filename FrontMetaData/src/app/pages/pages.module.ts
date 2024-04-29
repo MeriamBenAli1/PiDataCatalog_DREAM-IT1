@@ -27,6 +27,7 @@ import { CatalogsModule } from './catalogs/catalogs.module';
 import { AdministrationModule } from './administration/administration.module';
 import { ChartModule } from './chart/chart.module';
 import { StatComponent } from '../AdminCharts/widget/stat/stat.component';
+import { StatMetadataComponent } from '../stat-metadata/stat-metadata.component';
 
 
 
@@ -59,7 +60,8 @@ import { StatComponent } from '../AdminCharts/widget/stat/stat.component';
     AjouterDocumentationComponent,
     ListDocumentationComponent,
     ModifierDocumentationComponent,
-    SimplebarAngularModule
+    SimplebarAngularModule,
+    StatMetadataComponent
   ],
   providers: [
   ]

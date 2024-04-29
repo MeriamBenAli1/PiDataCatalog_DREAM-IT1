@@ -67,7 +67,9 @@ public class IAuthenticationServicesImp implements IAuthenticationServices {
 
         // Include the token in the response headers
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Authorization",  jwt);
+        headers.add("Authorization", "Bearer " + jwt);
+
+        System.out.println("Authorization header: " + headers.getFirst("Authorization"));
 
         // Log the successful authentication
         System.out.println("User authenticated: " + email);

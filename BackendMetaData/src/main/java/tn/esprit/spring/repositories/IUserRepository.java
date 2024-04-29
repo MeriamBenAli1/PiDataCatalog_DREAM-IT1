@@ -26,5 +26,8 @@ public interface IUserRepository extends JpaRepository<User, Long> {
     int countUsers();
    // List<User> findByRoleAndAccessApprovedFalse(String role);
    // Optional<User> findByIdAndAccessApprovedFalse(Long id);
-
+   @Query("SELECT DISTINCT u FROM User u JOIN FETCH u.auditLogs a WHERE a.archived = false")
+   List<User> findAllWithAudits();
+    @Query("SELECT DISTINCT u FROM User u JOIN FETCH u.auditLogs a WHERE a.archived = true")
+    List<User> findAllWithAuditsArchived();
 }

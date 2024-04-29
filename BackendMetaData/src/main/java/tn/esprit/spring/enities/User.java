@@ -36,7 +36,7 @@ public class User implements Serializable, UserDetails {
 
     String password;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(  name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -47,19 +47,19 @@ public class User implements Serializable, UserDetails {
     @JsonIgnore
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<DemandedRole> demandedRoles;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<AuditLog> auditLogs;
 
-
-
-//    @JsonIgnore
-//    public Collection<? extends GrantedAuthority> getAuthorities() {
-//        return List.of(new SimpleGrantedAuthority(role.name()));
-//    }
 
 
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        Set<GrantedAuthority> authorities = new HashSet<>();
+        for (Role role : roles) {
+            authorities.add(new SimpleGrantedAuthority(role.getName().toString())); // Assuming getName() returns ERole
+        }
+        return authorities;
     }
 
     @Override

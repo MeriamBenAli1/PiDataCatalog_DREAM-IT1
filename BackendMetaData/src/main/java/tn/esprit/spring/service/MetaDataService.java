@@ -2,11 +2,12 @@ package tn.esprit.spring.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
+import tn.esprit.spring.enities.ColumnMatch;
+import tn.esprit.spring.enities.MetaData;
 import org.hibernate.boot.Metadata;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.enities.ColumnMetaData;
-import tn.esprit.spring.enities.MetaData;
 import tn.esprit.spring.repositories.ColumnRepository;
 import tn.esprit.spring.repositories.MetaDataRepository;
 
@@ -83,5 +84,33 @@ public class MetaDataService {
         tableRepository.save(dataTable);
     }
 
+    public List<MetaData> findAllWithMetaData() {
+        List<MetaData> t = tableRepository.findAllWithMetaData();
+        return t;
+    }
+    public List<ColumnMatch> findColumnMatches() {
+        List<MetaData> tablesWithMetaData = tableRepository.findAllWithMetaData();
+        List<ColumnMatch> columnMatches = new ArrayList<>();
+
+        // Parcours des tables pour trouver les correspondances entre les colonnes
+        for (int i = 0; i < tablesWithMetaData.size(); i++) {
+            MetaData currentTable = tablesWithMetaData.get(i);
+            for (int j = i + 1; j < tablesWithMetaData.size(); j++) {
+                MetaData otherTable = tablesWithMetaData.get(j);
+                for (ColumnMetaData currentMetaData : currentTable.getSchemas()) {
+                    for (ColumnMetaData otherMetaData : otherTable.getSchemas()) {
+                        if (currentMetaData.getName().equals(otherMetaData.getName())) {
+                            ColumnMatch match = new ColumnMatch();
+                            match.setColumnName(currentMetaData.getName());
+                            match.setTables(new String[] {currentTable.getName(), otherTable.getName()});
+                            columnMatches.add(match);
+                        }
+                    }
+                }
+            }
+        }
+
+        return columnMatches;
+    }
 
 }

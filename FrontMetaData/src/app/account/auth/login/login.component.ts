@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       next: (data: LoginResponse) => {
         console.log(data);
 
-        let jwToken = data.accessToken;
+        let jwToken = 'Bearer ' + data.accessToken; 
         this.authService.saveToken(jwToken);
 
         // Store user details in localStorage

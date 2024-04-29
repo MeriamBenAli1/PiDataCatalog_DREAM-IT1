@@ -49,6 +49,8 @@
     "echarts": "^5.4.3",
     "firebase": "^10.7.1",
     "fullcalendar": "^6.1.10",
+    "gojs": "^3.0.0",
+    "gojs-angular": "^2.0.7",
     "highcharts": "^11.4.0",
     "jspdf": "^2.5.1",
     "leaflet": "^1.9.4",

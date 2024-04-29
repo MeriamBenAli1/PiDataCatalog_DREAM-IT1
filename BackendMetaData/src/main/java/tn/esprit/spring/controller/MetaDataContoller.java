@@ -109,4 +109,14 @@ public class MetaDataContoller {
             return ResponseEntity.badRequest().body("Error updating description: " + e.getMessage());
         }
     }
+
+    @GetMapping("/TableWithMetaData")
+    public List<MetaData> getAllAllWithMetaData() {
+        return dataTableService.findAllWithMetaData();
+    }
+    @GetMapping("/TableWithRelation")
+    public List<ColumnMatch> getAllTablesRelation() {
+        return dataTableService.findColumnMatches();
+    }
+
 }

@@ -62,7 +62,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error Adding role");
         }
     }
-    //@PreAuthorize("@roleUtils.hasRole(authentication, 'ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/all")
     public List<User> getAllUsers() {
         return userServices.getAllUsers();
@@ -84,7 +84,7 @@ public class UserController {
     }
 
 
-
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/addRole/{demandId}")
     public ResponseEntity<String> addRoleToUserAndApproveAccess(@PathVariable Long demandId) {
         try {
@@ -120,5 +120,16 @@ public class UserController {
         } else {
             throw new RuntimeException("Could not read the file!");
         }
+    }
+
+    @GetMapping("/UserWithAudit")
+    public List<User> getAllUsersWithAudits() {
+        List<User> usersWithAudits = userServices.getAllUsersWithAudits();
+        return usersWithAudits;
+    }
+    @GetMapping("/UserWithAuditArchived")
+    public List<User> getAllUsersWithAuditsArchived() {
+        List<User> usersWithAuditsArchived = userServices.getAllUsersWithAuditsArchived();
+        return usersWithAuditsArchived;
     }
 }

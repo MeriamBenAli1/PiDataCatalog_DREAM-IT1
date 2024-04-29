@@ -12,8 +12,8 @@ export class ApiService {
   //http://localhost:8093/GestionUser/users/getPendingAccessRequests/{{role}}
   private apiUrls = 'http://localhost:8082/PIDataCatalog/users/count';
   private apiUrl = 'http://localhost:8082/PIDataCatalog/';
-  private botToken = '6628546988:AAFH-2IELWO_ygQ3Imzk5gocWzQUskicT70'; // Replace with your bot token
-  private chatId = '5727061798'; // Replace with your chat ID
+  private botToken = '7178553327:AAF8UQUp9oV1KhrdTvfO8KkJIpG7q_junvY'; // Replace with your bot token
+  private chatId = '7034548340'; // Replace with your chat ID
   private apiKey = '5e5d208b-596e-4b4f-9960-a4a7d118ed12'; // Your API key
 
   constructor(private http: HttpClient, private deviceService: DeviceDetectorService) {}

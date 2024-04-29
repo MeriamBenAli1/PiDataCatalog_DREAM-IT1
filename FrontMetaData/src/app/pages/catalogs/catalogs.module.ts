@@ -17,13 +17,38 @@ import { AllCatalogsComponent } from './all-catalogs/all-catalogs.component';
 import { InformationAssetsComponent } from './information-assets/information-assets.component';
 import { MetadataImportsComponent } from './metadata-imports/metadata-imports.component';
 import { CatalogsRoutingModule } from './catalogs-routing.module';
+import { AddFolderDialogComponent } from './add-folder-dialog/add-folder-dialog.component';
 
+// eya mat
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button'
+import {MatRadioModule} from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
+import { ColumnMetadataComponent } from './column-metadata/column-metadata.component';
+import { TableInterfaceComponent } from './table-interface/table-interface.component';
+
+import { MatSortModule } from '@angular/material/sort';
+import { RouterModule } from '@angular/router';
+import { AddMetadataDialogComponent } from './add-metadata-dialog/add-metadata-dialog.component';
+import { EditColumnDialogComponent } from './edit-column-dialog/edit-column-dialog.component';
 
 @NgModule({
   // tslint:disable-next-line: max-line-length
-  declarations: [AllCatalogsComponent, 
+  declarations: [
+    AllCatalogsComponent, 
     InformationAssetsComponent, 
     MetadataImportsComponent, 
+    AddFolderDialogComponent, 
+    ColumnMetadataComponent, 
+    TableInterfaceComponent, 
+    AddMetadataDialogComponent,
+    EditColumnDialogComponent
+   
 ],
   imports: [
     CommonModule,
@@ -32,6 +57,7 @@ import { CatalogsRoutingModule } from './catalogs-routing.module';
     ReactiveFormsModule,
     CatalogsRoutingModule,
     UiModule,
+    RouterModule,
     CdkStepperModule,
     NgStepperModule,
     NgbAccordionModule,
@@ -42,7 +68,29 @@ import { CatalogsRoutingModule } from './catalogs-routing.module';
     NgbCollapseModule,
     NgSelectModule,
     NgxSliderModule,
-    NgbModalModule
+    NgbModalModule,
+    RouterModule,
+    
+
+    
+    MatStepperModule,
+    
+    MatInputModule,
+    MatButtonModule,
+    MatRadioModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatSortModule,
+    RouterModule,
+   
+
+    
+
+    
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

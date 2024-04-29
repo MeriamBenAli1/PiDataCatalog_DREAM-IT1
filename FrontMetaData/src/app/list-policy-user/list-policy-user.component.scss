@@ -16,4 +16,19 @@
     height: 50px;
     margin-bottom: 10px;
   }
+
+  /* your-component.scss ou styles.scss */
+  .card-clickable {
+    transition: transform 0.3s ease; /* Animation lisse pour le transform */
+    cursor: pointer;
+    /* Change le curseur pour indiquer qu'il est cliquable */
+  }
+  .btn btn-success{
+color:rgb(45, 77, 222);
+
+  }
+  .card-clickable:active {
+    transform: scale(1.20);
+    color: rgb(3, 24, 185); /* Agrandit légèrement la carte lors du clic */
+  }
   

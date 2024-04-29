@@ -1,0 +1,24 @@
+<div class="title-frame">
+  <h2 mat-dialog-title class="dialog-title"><i class="fas fa-plus"></i> Add New Column </h2>
+</div>
+<div mat-dialog-content class="dialog-content">
+  <form [formGroup]="metadataForm"  (ngSubmit)="onSubmit()">
+    <mat-form-field class="form-field">
+      
+      <input matInput placeholder="Column Name " formControlName="columnName" >
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      
+      <input matInput formControlName="value" placeholder="Column Type" formControlName="columnType">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <textarea matInput placeholder="Column Description" appearance="fill" class="double-width" formControlName="columnDescription"></textarea>
+  </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions class="dialog-actions">
+  <button mat-button class="cancel-button" (click)="dialogRef.close()">Cancel</button>
+  <button mat-button color="primary" class="add-button"  (click)="onSubmit()">
+    <i class="fas fa-plus"></i>Add
+  </button>
+</div>

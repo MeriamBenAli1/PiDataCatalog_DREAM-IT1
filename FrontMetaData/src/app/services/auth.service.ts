@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { HttpClient,HttpParams,HttpResponse } from '@angular/common/http';
+import { HttpClient,HttpParams,HttpResponse , HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { User } from '../model/user.model';
 import { Observable } from 'rxjs';
@@ -47,7 +47,11 @@ registerUser(user: User): Observable<any> {
 }
 
 getUsers(): Observable<any[]> {
-  return this.http.get<any[]>(`${this.apiusers}/all`);
+  let jwToken =  this.getToken();
+
+  const headers = new HttpHeaders().set('Authorization', jwToken);
+
+  return this.http.get<any[]>(`${this.apiusers}/all`, { headers });
 }
 
 deleteUser(userId: number): Observable<any> {

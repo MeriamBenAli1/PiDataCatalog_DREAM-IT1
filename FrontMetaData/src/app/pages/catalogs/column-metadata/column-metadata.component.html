@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div class="vendor-sales-report">
+  
+  <div class="header">
+  <i class="fa-solid fa-table-list"></i>
+  <span *ngIf="!isTableNameEditable" readonly style="font-weight:500;">{{ tableName }}</span> 
+  <input *ngIf="isTableNameEditable" type="text" [(ngModel)]="tableName" class="form-control" />
+    <i class="fa-solid fa-pencil-alt" (click)="toggleEditTableName()"></i> 
+    <button *ngIf="isTableNameEditable" class="save-btn" (click)="saveTableName()" >Save</button>
+  </div>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="#overview" data-toggle="tab">Overview</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#hierarchy" data-toggle="tab">Statistics</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#hierarchy" data-toggle="tab">History</a>
+    </li>
+    <!-- ... other tabs ... -->
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="overview">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="description-area">
+            <textarea *ngIf="!isDescriptionEditable" id="description" rows="3" class="form-control" readonly>{{ tableDescription }}</textarea>
+            <input *ngIf="isDescriptionEditable" type="text" [(ngModel)]="tableDescription" class="form-control" />
+            <button class="edit-btn" (click)="toggleEditDescription()">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <button *ngIf="isDescriptionEditable" class="save-btn" (click)="saveDescription()">Save</button>
+          </div>
+
+          <div class="table-columns">
+            <div class="header-actions">
+              <h2>Table Columns ({{columns.length}})</h2>
+              <button class="add-metadata-btn" (click)="openDialog()">
+                <i class="fa fa-plus"></i>Add Metadata
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Labels</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let column of columns; let idx = index">
+                    <td   style="color: #007bff;  " ><i class = 'ri-database-2-line'> </i>{{column.name}}</td>
+                    <td>{{column.type}}</td>
+
+                    <td>
+                      <div class="description-cell">
+                      {{column.description}}
+                      <i class="material-icons edit-icon" (click)="openEditDialog(column)">edit</i>
+                      </div>
+                    </td>
+                  
+                    <td (mouseover)="showEditIcon[idx] = true" (mouseleave)="showEditIcon[idx] = false">
+                      <ng-container *ngFor="let tag of column.tags; let i = index">
+                        <span class="label">
+                          {{ tag }}
+                          <i *ngIf="showEditIcon[idx]" class="material-icons" (click)="removeColumnLabels(column, i)">close</i>
+                        </span>
+                      </ng-container>
+                      <i *ngIf="showEditIcon[idx]" class="material-icons" (click)="editMode[idx] = true; showEditIcon[idx] = false">edit</i>
+                      <div *ngIf="editMode[idx]">
+                        <input [(ngModel)]="newLabels" placeholder="Add Label" (keyup.enter)="addColumnLabels(column, idx)">
+                        <button (click)="addColumnLabels(column, idx)">Confirm</button>
+                        <button (click)="editMode[idx] = false">Cancel</button>
+                      </div>
+                    </td>
+                    <button class="btn btn-success" (click)="openSchemas()">
+                      <span class="icon">
+                        <i class="fas fa-plus"></i> <!-- Icône pour les métadonnées -->
+                      </span>
+                      policy
+                    </button>
+                    
+                    </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="additional-info-area">
+            <h6> Source: </h6>
+            <p  >{{ tableSource}} </p>
+            <h6> Table Size: </h6>
+            <p  >{{ tableSize }} Ko </p>
+            <h6> Creation Date: </h6>
+            <p  >{{ tableCreationDate}}</p>
+            <h6> Table Creator </h6>
+            <p  > {{ tableCreator}} </p>
+            <p><strong>Table Users:</strong>  <i class="fa-solid fa-plus-circle"></i>  </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="statistics">
+      </div>
+
+    <div class="tab-pane fade" id="history">
+</div>
+
+    <!-- ... other tab content ... -->
+ 

@@ -1,0 +1,64 @@
+/* add-folder-dialog.component.scss */
+
+.title-frame {
+  background-color: #4fa3d3;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.dialog-title {
+  color: #fff;
+  margin: 0;
+  font-size: 24px;
+}
+
+.dialog-content {
+  padding: 20px;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.dialog-actions {
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.cancel-button {
+  color: #dc3545;
+  background-color: transparent;
+  border: 1px solid #dc3545;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+  background-color: #d43444;
+  color: #fff;
+}
+
+.add-button {
+  margin-left: 10px;
+  background-color: #57c4e2;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #6eb9c5;
+}
+/* add-folder-dialog.component.scss */
+
+
+.add-button[disabled] {
+  color: grey !important; /* Couleur du texte pour le bouton désactivé */
+  background-color: #e0e0e0 !important; /* Fond gris pour le bouton désactivé */
+}
+
+/* Style spécifique pour le bouton non désactivé (actif) */
+.add-button:not([disabled]) {
+  color: #fff !important; /* Texte blanc pour une meilleure lisibilité */
+  background-color: #1976d2 !important; /* Bleu Angular Material par défaut */
+}

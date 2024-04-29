@@ -24,4 +24,7 @@ public interface IUserServices {
     public User updateImage (Long idUser, MultipartFile file);
 
     public void save(User user);
+
+    List<User> getAllUsersWithAudits();
+    List<User> getAllUsersWithAuditsArchived();
 }

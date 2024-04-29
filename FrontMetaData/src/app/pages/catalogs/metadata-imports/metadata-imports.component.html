@@ -1,1 +1,92 @@
-<p>metadata-imports works!</p>
+<form [formGroup]="Empregister" (ngSubmit)="HandleSubmit()">
+    <h2 class="title"> MetaData Import </h2>
+    <mat-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="Basicform">
+          <div formGroupName="basic">
+            <ng-template matStepLabel>General Informations</ng-template>
+            <mat-form-field appearance="fill">
+              <mat-label >Name</mat-label>
+              <input matInput placeholder="Name" formControlName="firstname" >
+            </mat-form-field>
+            <div>
+            <mat-form-field appearance="fill" class="double-width">
+              <mat-label>Description</mat-label>
+              <textarea type="text" matInput placeholder="Description" formControlName="desc" ></textarea>
+            </mat-form-field>
+            </div>
+            <div class="spaced">
+                <mat-label style="margin-right: 100px;">Metadata Source Type</mat-label>
+                <mat-radio-group aria-label="Select an option" formControlName="typeF">
+                  <mat-radio-button value="CSV" style="margin-right: 50px;" >CSV File</mat-radio-button>
+                  <mat-radio-button value="Excel" style="margin-right: 20px;" >Excel File</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            <br />
+            
+            <div>
+              <button mat-raised-button color="primary" matStepperNext >Next</button>
+            </div>
+          </div>
+        </mat-step>
+
+
+
+        <mat-step [stepControl]="contactform"  label="Configuration">
+          <div formGroupName="contact">
+            <div class="spaced">
+              <mat-form-field appearance="outline">
+                <mat-label style="margin-right: 100px;" >Choose Location</mat-label>
+                <mat-select formControlName="location" [formControl]="selectedFW" >
+                  <mat-option *ngFor="let location of locations" [value]="location">
+                  {{ location}}
+                 </mat-option>
+                </mat-select>
+              </mat-form-field>
+              </div>
+              <div class="spaced">
+                <mat-form-field appearance="outline">
+                  <mat-label style="margin-right: 100px;">Choose Folder</mat-label>
+                  <mat-select formControlName="folder" [formControl]="selectedFW">
+                    <mat-option *ngFor="let framwork of frameworks" [value]="framwork">
+                    {{ framwork }}
+                   </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                </div>
+            <div>
+              <button mat-raised-button color="primary" matStepperPrevious>Back</button> | 
+              <button mat-raised-button color="primary" matStepperNext >Next</button>
+            </div>
+        </div>
+        </mat-step>
+
+
+
+        
+        <mat-step [stepControl]="addressform" label="Confirmation">
+            <div formGroupName="address">
+            <br/>
+            <br/>
+            <mat-label class="spaced" style="margin-right: 100px;" formControlName="files" >Upload Source Files</mat-label>
+            <div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop >
+                
+              <input hidden type="file" #fileInput (change)="onFileSelected($event)">
+              </div>
+              <div  class="files-list" *ngFor="let file of files;let i= index">
+                  <p> {{ file }} </p>
+                  <button class="delete-file" (click)="deleteAttachment(i)">
+                    <img src="../../../../assets/images/metadataIMG/Recycle_Bin_Full.png">
+                  </button>
+               </div>
+               
+            
+              <div>
+                <button mat-raised-button color="primary" matStepperPrevious>Back</button> | 
+                <button mat-raised-button color="accent"  (click)="onUpload()"> Extract </button>
+                
+
+              </div>
+          </div>
+          </mat-step>
+      </mat-stepper>
+    </form>

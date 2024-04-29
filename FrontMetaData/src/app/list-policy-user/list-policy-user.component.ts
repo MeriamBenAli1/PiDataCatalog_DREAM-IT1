@@ -18,7 +18,7 @@ export class ListPolicyUserComponent implements OnInit {
   policyForm: FormGroup;
   selectedPolicy: Policy | null = null;
 
-  constructor(private policyService: PolicyService ,private router: Router ) {
+  constructor(private policyService: PolicyService ,private router: Router  ) {
     // Initialisez votre formulaire ici
     this.policyForm = new FormGroup({
       nom: new FormControl('', [Validators.required]),
@@ -58,6 +58,14 @@ export class ListPolicyUserComponent implements OnInit {
       this.ngOnInit();
     }
   }
+  onMetaDataClick(event?: MouseEvent): void {
+    if (event) {
+      event.stopPropagation(); // Empêche l'événement de remonter aux éléments parents
+    }
+    alert('Affectation avec succès');
+  }
+
+ 
 
 }
 

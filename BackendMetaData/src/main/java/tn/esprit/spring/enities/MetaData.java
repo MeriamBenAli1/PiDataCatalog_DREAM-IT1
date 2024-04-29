@@ -35,7 +35,7 @@ public class MetaData implements Serializable {
     private TypeFile type;
 
 
-    @JsonIgnore
+
     @OneToMany(mappedBy = "parentDataTable", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<ColumnMetaData> schemas;
 

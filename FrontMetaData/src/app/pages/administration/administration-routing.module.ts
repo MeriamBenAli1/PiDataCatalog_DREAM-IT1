@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CatalogsComponent } from './catalogs/catalogs.component';
 import { LineageComponent } from './lineage/lineage.component';
+import { AuditLogComponent } from './Audit/audit-log.component';
+
 import { WorkFlowsComponent } from './work-flows/work-flows.component';
 import { UsersComponent } from './users/users.component';
 import { DemandedAccessComponent } from './demanded-access/demanded-access.component';
@@ -29,6 +31,11 @@ const routes: Routes = [
         path: 'access-demand',
         component: DemandedAccessComponent
     },
+    {
+        path: 'audit',
+        component: AuditLogComponent
+    },{ path: 'audit-log-archived', 
+    component: AuditLogComponent },
 
 ];
 

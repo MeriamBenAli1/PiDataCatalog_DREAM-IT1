@@ -9,7 +9,8 @@
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-4 mb-4" *ngFor="let policy of listpolicy">
-        <div class="card">
+        <!-- Ajoutez la classe card-clickable ici -->
+        <div class="card card-clickable" (click)="onMetaDataClick()">
           <div class="card-body">
             <h5 class="card-title">
               <span class="icon">
@@ -23,7 +24,8 @@
               </span>
               {{ policy.rules }}
             </p>
-            <button class="btn btn-success">
+         
+            <button class="btn btn-primary" (click)="onMetaDataClick($event)">
               <span class="icon">
                 <i class="fas fa-plus"></i> <!-- Icône pour les métadonnées -->
               </span>
@@ -36,4 +38,3 @@
     
     <button class="btn btn-primary" routerLink="/Statpolicies">Statistiques sur les politiques</button>
   </div>
-  

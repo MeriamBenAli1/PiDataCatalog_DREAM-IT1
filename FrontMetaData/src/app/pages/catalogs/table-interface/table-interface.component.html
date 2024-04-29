@@ -1,0 +1,46 @@
+<div class="modern-table-wrapper">
+  <div>
+    <label for="filter-select">Filtrer par:</label>
+    <select id="filter-select" [formControl]="filterTypeControl">
+      <option value="name">Nom</option>
+      <option value="creator">Créateur</option>
+      <option value="location">Location</option>
+     
+    </select>
+    
+    <input type="text" placeholder="Rechercher..." [formControl]="searchControl">
+  </div>
+  
+  <table class="modern-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Source</th>
+        <th>Description</th>
+        <th>Creation Date</th>
+        <th>Size</th>
+        <th>Creator</th>
+        <th>Location</th>
+        <th>Type</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let element of filteredData | async">
+        <td>{{ element.idTable }}</td>
+        <td>{{ element.title }}</td>
+        <td>{{ element.source }}</td>
+        <td>{{ element.description }}</td>
+        <td>{{ element.creationDate | date }}</td>
+        <td>{{ element.size }}</td>
+        <td>{{ element.creator }}</td>
+        <td>{{ element.location }}</td>
+        <td>{{ element.type }}</td>
+        <td>
+          <button class="metadata-btn" (click)="openSchemas(element); $event.stopPropagation()">Show Metadata</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

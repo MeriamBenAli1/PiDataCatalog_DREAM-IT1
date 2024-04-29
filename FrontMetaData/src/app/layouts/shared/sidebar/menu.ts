@@ -6,16 +6,7 @@ export const MENU: MenuItem[] = [
         label: 'MENUITEMS.MENU.TEXT',
         isTitle: true
     },
-    {
-        id: 2,
-        label: 'MENUITEMS.DASHBOARDS.TEXT',
-        icon: 'ri-dashboard-line',
-        badge: {
-            variant: 'success',
-            text: 'MENUITEMS.DASHBOARDS.BADGE',
-        },
-        link: '/'
-    },
+   
     {
         id: 3,
         label: 'MENUITEMS.CALENDAR.TEXT',
@@ -99,34 +90,32 @@ export const MENU: MenuItem[] = [
         label: 'Gouvernance',
         icon: 'ri-store-2-line',
         subItems: [
-            {
-                id: 6,
-                label: 'Policy',
-                link: 'Ajouter-policy',
-                parentId: 5
-            },
            
             {
-                id: 7,
-                label: 'GetPolicy',
-                link: 'List-policy',
-                parentId: 5
-            },
-            {
-                id: 8,
-                label: 'Docummentation',
-                link: '/Ajouter-Documentation',
-                parentId: 5
-            },
-            {
-                id: 9,
-                label: 'GetDoc',
-                link: '/List-Documentation',
-                parentId: 5
-            },
+                id: 30,
+                label: ' Docummentation',
+                icon: ' ri-user-line',
+                
+                subItems: [{
+                    id: 29, 
+                    label: 'Add Documentation',
+                    link: '/Ajouter-Documentation',
+                    parentId: 26
+                },{
+                    id: 32, 
+                    label: 'List Documentation',
+                    link: '/List-Documentation',
+                    parentId: 26
+                },
+    
+            ]
+
+            }
+         ,
+           
             {
                 id: 10,
-                label: 'policyUser',
+                label: 'Policy',
                 link: '/List-policyUser',
                 parentId: 5
             },
@@ -136,12 +125,7 @@ export const MENU: MenuItem[] = [
                 link: '/Extraction',
                 parentId: 5
             },
-            {
-                id: 1,
-                label: 'Statpolicies',
-                link: '/Statpolicies',
-                parentId: 5
-            },
+           
             {
                 id: 1,
                 label: 'chatboot',
@@ -149,44 +133,66 @@ export const MENU: MenuItem[] = [
                 parentId: 5
             },
             
-{
-                id: 6,
-                label: 'StatInterface',
-                link: '/StatInterface',
-                parentId: 5
-            },
-{
-                id: 10,
-                label: 'DataStat',
-                link: '/StatMetaData',
-                parentId: 5
-            },
+
+
 {
                 id: 11,
                 label: 'MetaData',
                 link: '/referencesData',
                 parentId: 5
             },
-            {
-                id: 12,
-                label: 'Policies',
-                link: '/policies',
-                parentId: 5
-            },
+          
             {
                 id: 13,
-                label: 'StatRima',
+                label: 'Stat',
                 link: '/Stat',
                 parentId: 5
             },
+
+            {
+                id: 30,
+                label: 'Satistics',
+                icon: ' ri-user-line',
+                
+                subItems: [{
+                    id: 29, 
+                    label: 'Interface Satisitcs',
+                    link: '/StatInterface',
+                    parentId: 26
+                },{
+                    id: 29, 
+                    label: 'Data Satisitcs',
+                    link: '/StatMetaData',
+                    parentId: 26
+                },{
+                    id: 32, 
+                    label: 'Policy Satisitcs',
+                    link: '/Statpolicies',
+                    parentId: 26
+                },
+    
+            ]
+
+            }
         ]
+
+        
     },
 
     {
         id: 26,
         label: 'Administration',
         icon: ' ri-mac-line',
-        subItems: [
+        subItems: [ {
+            id: 2,
+            label: 'MENUITEMS.DASHBOARDS.TEXT',
+            icon: 'ri-dashboard-line',
+            badge: {
+                variant: 'success',
+                text: 'MENUITEMS.DASHBOARDS.BADGE',
+            },
+            link: '/'
+        },
             {
                 id: 30,
                 label: 'Users',
@@ -202,6 +208,25 @@ export const MENU: MenuItem[] = [
                     label: 'Access Demanded',
                     link: '/access-demand',
                     parentId: 26
+                },
+    
+            ]
+
+            },{
+                id: 30,
+                label: 'Policy',
+                icon: ' ri-user-line',
+                
+                subItems: [{
+                    id: 29, 
+                    label: 'Add Policy',
+                    link: 'Ajouter-policy',
+                    parentId: 26
+                }, {
+                    id: 7,
+                    label: 'List',
+                    link: 'List-policy',
+                    parentId: 5
                 },
     
             ]
@@ -225,6 +250,12 @@ export const MENU: MenuItem[] = [
                 link: '/workFlows',
                 parentId: 26
             },
+            {
+                id: 32, 
+                label: 'Audit',
+                link: '/audit',
+                parentId: 26
+            },
 
         ]
     },
@@ -232,6 +263,6 @@ export const MENU: MenuItem[] = [
         id: 4,
         label: 'MENUITEMS.CHAT.TEXT',
         icon: 'ri-chat-1-line',
-        link: '/'
+        link: '/chatboot'
     },
    ];

@@ -42,7 +42,7 @@ export class SetPasswordComponent implements OnInit , AfterViewInit  {
             timer: 1500
           }).then(() => {
             // Reload the page after the Swal is closed
-            window.location.href = '/login';
+            window.location.href = '/account/login';
 
           });     
         

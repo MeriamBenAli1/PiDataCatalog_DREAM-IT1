@@ -18,6 +18,7 @@ import { LineageComponent } from './lineage/lineage.component';
 import { UsersComponent } from './users/users.component';
 import { WorkFlowsComponent } from './work-flows/work-flows.component';
 import { DemandedAccessComponent } from './demanded-access/demanded-access.component';
+import { AuditLogComponent } from './Audit/audit-log.component';
 
 import { AdministrationRoutingModule } from './administration-routing.module';
 
@@ -25,6 +26,7 @@ import { AdministrationRoutingModule } from './administration-routing.module';
 @NgModule({
   // tslint:disable-next-line: max-line-length
   declarations: [UsersComponent,
+    AuditLogComponent,
     CatalogsComponent, 
     LineageComponent, 
     WorkFlowsComponent, 
